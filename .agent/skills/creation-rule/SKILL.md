@@ -1,53 +1,58 @@
 ---
 name: creation-rule
-description: Guide for creating and managing Agent Rules (Global & Workspace).
+description: Guide pour créer et gérer les Règles de l'Agent (Workspace uniquement).
 ---
 
-# Creation Rule Skill
+# Skill de Création de Règles
 
-This skill provides guidelines and procedures for creating Agent Rules.
+Ce skill fournit des directives et des procédures pour créer des Règles d'Agent spécifiques au Workspace.
 
-## What are Rules?
-Rules are manually defined constraints that guide the Agent's behavior, stack, and style.
-- **Global Rules**: Located at `~/.gemini/GEMINI.md`. These are applied across all workspaces.
-- **Workspace Rules**: Located in the `.agent/rules` folder of the workspace. These are specific to the current project.
+## Que sont les Règles ?
+Les Règles sont des contraintes définies manuellement pour guider le comportement, la stack et le style de l'Agent au sein du projet actuel.
+- **Règles de Workspace** : Situées dans le dossier `.agent/rules` du workspace. Elles sont spécifiques au projet.
 
-## Rule Activation Types
-When creating a rule, consider how it will be activated (this is configured in the Rules panel, but the content should reflect the usage):
-- **Manual**: Activated via `@` mention.
-- **Always On**: Always applied.
-- **Model Decision**: The model decides to apply it based on a natural language description.
-- **Glob**: Applied to files matching a specific pattern (e.g., `*.js`).
+## Types d'Activation de Règle
+Lors de la création d'une règle, considérez comment elle sera activée (le contenu doit refléter l'usage en utilisant le frontmatter YAML) :
+- **Manual** : Activée via une mention `@`. (Pas de trigger spécifique, ou trigger manuel)
+- **Always On** : Toujours appliquée (`trigger: always_on`).
+- **Model Decision** : Le modèle décide (`trigger: model_decision`).
+- **Glob** : Appliquée aux fichiers correspondant à un motif spécifique (`trigger: glob` + `glob: ...`).
 
-## How to Create a Workspace Rule
+## Comment Créer une Règle
 
-1. **Create the File**:
-   - Navigate to `.agent/rules/`.
-   - Create a new Markdown file (e.g., `my-rule.md`).
+1. **Créer le Fichier** :
+   - Naviguer vers `.agent/rules/`.
+   - Créer un nouveau fichier Markdown (ex: `ma-regle.md`).
    
-2. **Define the Content**:
-   - Rules are Markdown files.
-   - Limit: 12,000 characters per file.
-   - You can reference other files using `@` syntax (e.g., `@/path/to/file.md`).
+2. **Définir le Contenu** :
+   - Les règles sont des fichiers Markdown.
+   - Limite : 12 000 caractères par fichier.
+   - Utilisez le Frontmatter YAML pour définir les triggers.
 
-3. **Best Practices**:
-   - Be specific about constraints (e.g., "Always use `const` instead of `var`").
-   - Provide examples of correct vs. incorrect usage.
-   - Group related rules into a single file (e.g., `testing-rules.md`, `style-guide.md`).
+3. **Bonnes Pratiques** :
+   - Soyez spécifique sur les contraintes.
+   - Fournissez des exemples.
+   - Le nom du fichier doit être en **français** (ex: `regle-nommage.md`).
 
-## Template for a New Rule
+## Template pour une Nouvelle Règle
 
 ```markdown
-# [Rule Name]
+---
+trigger: always_on
+glob: 
+description: 
+---
 
-## Objective
-[Brief description of what this rule aims to achieve]
+# [Nom de la Règle]
 
-## Guidelines
-1. [Guideline 1]
-2. [Guideline 2]
+## Objectif
+[Brève description de ce que cette règle vise à accomplir]
 
-## Examples
+## Directives
+1. [Directive 1]
+2. [Directive 2]
+
+## Exemples
 Correct:
 ...
 

@@ -1,63 +1,63 @@
 ---
 name: creation-workflow
-description: Guide for creating and managing Agent Workflows.
+description: Guide pour créer et gérer les Workflows de l'Agent.
 ---
 
-# Creation Workflow Skill
+# Skill de Création de Workflow
 
-This skill provides guidelines and procedures for creating Agent Workflows.
+Ce skill fournit des directives et des procédures pour créer des Workflows d'Agent.
 
-## What are Workflows?
-Workflows define a series of steps to guide the Agent through repetitive tasks (e.g., deployments, PR reviews).
-- They are saved as Markdown files.
-- Can be invoked via slash commands (e.g., `/workflow-name`).
-- Can call other workflows.
+## Que sont les Workflows ?
+Les Workflows définissent une série d'étapes pour guider l'Agent à travers des tâches répétitives (ex: déploiements, revues de PR).
+- Ils sont sauvegardés en fichiers Markdown.
+- Peuvent être invoqués via des "slash commands" (ex: `/nom-workflow`).
+- Peuvent appeler d'autres workflows.
 
-## Workflow Locations
-- **Global Workflows**: Accessed across all workspaces (managed via Customizations panel).
-- **Workspace Workflows**: Located in `.agent/workflows/` within the workspace.
+## Emplacements des Workflows
+- **Workflows Globaux** : Accessibles dans tous les workspaces (gérés via le panneau Customizations).
+- **Workflows de Workspace** : Situés dans `.agent/workflows/` au sein du workspace.
 
-## How to Create a Workspace Workflow
+## Comment Créer un Workflow de Workspace
 
-1.  **Create the File**:
-    - Navigate to `.agent/workflows/`.
-    - Create a new Markdown file (e.g., `deploy-app.md`).
+1.  **Créer le Fichier** :
+    - Naviguer vers `.agent/workflows/`.
+    - Créer un nouveau fichier Markdown (ex: `deploy-app.md`).
     
-2.  **Define the Content**:
-    - **Frontmatter**: Must include a `description`.
-    - **Steps**: Numbered list of instructions.
-    - **Limit**: 12,000 characters per file.
+2.  **Définir le Contenu** :
+    - **Frontmatter** : Doit inclure une `description`.
+    - **Étapes** : Liste numérotée d'instructions.
+    - **Limite** : 12 000 caractères par fichier.
 
-## Workflow File Format
+## Format de Fichier Workflow
 
 ```markdown
 ---
-description: [Short title, e.g., How to deploy the application]
+description: [Titre court, ex: Comment déployer l'application]
 ---
-[Specific steps on how to run this workflow]
+[Étapes spécifiques sur comment exécuter ce workflow]
 
-1. Step one...
-2. Step two...
+1. Étape un...
+2. Étape deux...
 ```
 
-## Special Features
+## Fonctionnalités Spéciales
 
-### Auto-run Commands (Turbo Mode)
-- `// turbo`: Place this annotation *above* a step to auto-run that specific command step without waiting for user approval.
-- `// turbo-all`: Place this annotation anywhere in the file to auto-run *all* command steps in the workflow.
+### Commandes Auto-run (Mode Turbo)
+- `// turbo` : Placez cette annotation *au-dessus* d'une étape pour auto-exécuter cette étape de commande spécifique sans attendre l'approbation de l'utilisateur.
+- `// turbo-all` : Placez cette annotation n'importe où dans le fichier pour auto-exécuter *toutes* les étapes de commande dans le workflow.
 
-**Example**:
+**Exemple** :
 ```markdown
-1. Make a folder called foo
+1. Créer un dossier appelé foo
 // turbo
-2. Make a folder called bar
+2. Créer un dossier appelé bar
 ```
 
 ### Slash Commands
-- The filename determines the slash command.
-- File `deploy-app.md` -> Command `/deploy-app`.
-- Use the `view_file` tool to read the workflow file if the user invokes the command.
+- Le nom du fichier détermine la commande slash.
+- Fichier `deploy-app.md` -> Commande `/deploy-app`.
+- Utilisez l'outil `view_file` pour lire le fichier workflow si l'utilisateur invoque la commande.
 
-## Workflow Chaining
-You can reference other workflows within a workflow step:
-"Call /workflow-name to perform the sub-task."
+## Chauffage de Workflow (Chaining)
+Vous pouvez référencer d'autres workflows dans une étape de workflow :
+"Appeler /nom-workflow pour effectuer la sous-tâche."

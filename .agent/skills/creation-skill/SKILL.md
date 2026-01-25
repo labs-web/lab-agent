@@ -1,55 +1,55 @@
 ---
 name: creation-skill
-description: Guide for creating and managing Agent Skills.
+description: Guide pour créer et gérer les Skills de l'Agent.
 ---
 
-# Creation Skill Skill
+# Skill de Création de Skill
 
-This skill provides guidelines and procedures for creating new Agent Skills.
+Ce skill fournit des directives et des procédures pour créer de nouveaux Skills d'Agent.
 
-## What are Skills?
-Skills are reusable packages of knowledge that extend the agent's capabilities. They instruct the agent on how to approach specific tasks, conventions, or tools.
+## Que sont les Skills ?
+Les Skills sont des paquets de connaissances réutilisables qui étendent les capacités de l'agent. Ils instruisent l'agent sur la façon d'aborder des tâches spécifiques, des conventions ou des outils.
 
-## Skill Locations
-- **Workspace Skills**: `<workspace-root>/.agent/skills/<skill-folder>/` (Project-specific)
-- **Global Skills**: `~/.gemini/antigravity/global_skills/<skill-folder>/` (Available across all projects)
+## Emplacements des Skills
+- **Skills de Workspace** : `<workspace-root>/.agent/skills/<dossier-skill>/` (Spécifique au projet)
+- **Skills Globaux** : `~/.gemini/antigravity/global_skills/<dossier-skill>/` (Disponible pour tous les projets)
 
-## How to Create a Skill
+## Comment Créer un Skill
 
-1. **Create the Folder**:
-   - Create a directory for your skill in `.agent/skills/` (e.g., `my-new-skill`).
+1. **Créer le Dossier** :
+   - Créer un répertoire pour votre skill dans `.agent/skills/` (ex: `mon-nouveau-skill`).
    
-2. **Create the Main Instruction File**:
-   - Create `SKILL.md` inside that folder.
-   - This is the *only* required file.
+2. **Créer le Fichier d'Instruction Principal** :
+   - Créer `SKILL.md` à l'intérieur de ce dossier.
+   - C'est le *seul* fichier requis.
 
-3. **Add Optional Resources** (if needed):
-   - `scripts/`: Helper scripts.
-   - `examples/`: Reference implementations.
-   - `resources/`: Templates or assets.
+3. **Ajouter des Ressources Optionnelles** (si nécessaire) :
+   - `scripts/` : Scripts utilitaires.
+   - `examples/` : Implémentations de référence.
+   - `resources/` : Templates ou assets.
 
-## SKILL.md Template
+## Template SKILL.md
 
-Every `SKILL.md` must start with YAML frontmatter.
+Chaque `SKILL.md` doit commencer par un frontmatter YAML.
 
 ```markdown
 ---
-name: my-skill-name
-description: A clear, third-person description of what the skill does. The agent uses this to decide if it should activate the skill.
+name: nom-de-mon-skill
+description: Une description claire à la troisième personne de ce que fait le skill. L'agent utilise ceci pour décider s'il doit activer le skill.
 ---
 
-# My Skill Name
+# Nom de Mon Skill
 
-## When to use this skill
-- Use this when...
-- Helpful for...
+## Quand utiliser ce skill
+- Utilisez ceci quand...
+- Utile pour...
 
-## How to use it
-Detailed step-by-step instructions...
+## Comment l'utiliser
+Instructions détaillées étape par étape...
 ```
 
-## Best Practices
-- **Focused Scope**: One skill per distinct task.
-- **Clear Description**: Crucial for the agent to "discover" the skill. Use keywords.
-- **Progressive Disclosure**: The agent sees the list of skills first, then reads `SKILL.md` if relevant.
-- **Scripts**: If using scripts, instruct the agent to use `--help` first.
+## Bonnes Pratiques
+- **Portée Focalisée** : Un skill par tâche distincte.
+- **Description Claire** : Crucial pour que l'agent "découvre" le skill. Utilisez des mots-clés.
+- **Divulgation Progressive** : L'agent voit d'abord la liste des skills, puis lit `SKILL.md` si pertinent.
+- **Scripts** : Si vous utilisez des scripts, instruisez l'agent d'utiliser `--help` en premier.
