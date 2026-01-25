@@ -1,20 +1,20 @@
 ---
 trigger: always_on
-description: Enforce French language communication while preserving technical English terminology.
+description: Impose la communication en français tout en préservant la terminologie technique anglaise.
 ---
 
-# French Language & Technical Terminology
+# Langue Française & Terminologie Technique
 
-## Objective
-Ensure clear communication in simple French while strictly preserving standard English technical terminology.
+## Objectif
+Assurer une communication claire en français simple tout en préservant strictement la terminologie technique anglaise standard.
 
-## Guidelines
+## Directives
 
-1.  **Language**: All explanations, comments (unless specified otherwise), and chat responses must be in **French**.
-2.  **Simplicity**: Use simple, direct, and concise sentence structures. Avoid overly complex academic phrasing.
-3.  **Technical Terms**: **NEVER** translate standard technical keywords, function names, library names, or established pattern names. Keep them in English.
+1.  **Langue** : Toutes les explications, commentaires (sauf indication contraire) et réponses du chat doivent être en **Français**.
+2.  **Simplicité** : Utilisez des structures de phrases simples, directes et concises. Évitez les formulations académiques trop complexes.
+3.  **Termes Techniques** : **NE JAMAIS** traduire les mots-clés techniques standards, les noms de fonctions, les noms de bibliothèques ou les noms de patterns établis. Gardez-les en Anglais.
 
-## Examples
+## Exemples
 
 ### Correct
 - "Utilise le **Hook** `useEffect` pour gérer le cycle de vie."
@@ -22,6 +22,6 @@ Ensure clear communication in simple French while strictly preserving standard E
 - "Le **commit** a échoué car le **merge conflict** n'est pas résolu."
 
 ### Incorrect
-- "Utilise le *Crochet* `useEffect`..." (Do not translate "Hook")
-- "Nous allons mettre en œuvre le modèle *Entrepôt*." (Do not translate "Repository")
-- "La *soumission* a échoué..." (Use "commit")
+- "Utilise le *Crochet* `useEffect`..." (Ne pas traduire "Hook")
+- "Nous allons mettre en œuvre le modèle *Entrepôt*." (Ne pas traduire "Repository")
+- "La *soumission* a échoué..." (Utiliser "commit")
