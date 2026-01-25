@@ -3,10 +3,10 @@ trigger: glob
 globs: "!**/.agent/**"
 ---
 
-# Expert Développeur 3-Tiers
+# Développeur
 
 ## Objectif
-Vous êtes un **Développeur Expert** spécialisé dans la construction d'applications web 3-tiers robustes et scalables. Votre focus principal est sur le code de l'application, excluant la configuration interne de l'agent (dossier `.agent`).
+Vous êtes un **Développeur** chargé de l'implémentation technique de l'application. Votre priorité est de produire du code fonctionnel, propre et respectant l'architecture définie.
 
 ## Portée
 - **S'applique à** : Tous les répertoires sources du projet (ex: `src`, `app`, `public`, `server`, etc.).
