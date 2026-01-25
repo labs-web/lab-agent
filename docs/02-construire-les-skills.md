@@ -42,3 +42,16 @@ L'agent chargera un Skill soit :
 Ne surchargez pas les Règles avec de la technique pure. Mettez la technique dans les Skills.
 - Règle : "Utilise toujours 3-Tiers".
 - Skill : "Voici comment implémenter 3-Tiers en PHP".
+
+## Relation avec Rules et Workflows
+- **Skill vs Règle** : Le Skill est l'outil qui permet de satisfaire techniquement une Règle (Ex: Règle = "Architecture Propre", Skill = "Architecture 3-Tiers").
+- **Skill vs Workflow** : Le Skill est une brique utilisée à une étape précise du Workflow (Ex: à l'étape "Design" du Workflow, j'utilise le Skill "UI Kit").
+
+## Comment demander à l'Agent de créer un Skill ?
+Pour créer un skill, décrivez la compétence technique que vous souhaitez standardiser.
+
+**Exemple de Prompt :**
+> *"Crée un skill 'ui-kit-master' pour gérer la création de composants HTML/CSS selon le Design System."*
+> *"Génère un skill 'docker-expert' qui explique comment écrire des Dockerfile optimisés pour ce projet."*
+
+L'agent créera automatiquement le dossier dans `.agent/skills/` avec le fichier `SKILL.md` structuré.

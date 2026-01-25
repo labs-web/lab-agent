@@ -45,3 +45,16 @@ Pour une application 3-Tiers, nous voulons que le développeur commence toujours
 1. **Soyez Explicite** : Ne laissez pas de place à l'interprétation. Utilisez "DOIT", "NE DOIT PAS".
 2. **Séparation des Rôles** : Créez un fichier par rôle (`role-architecte.md`, `role-developpeur.md`) pour éviter la confusion.
 3. **Hiérarchie** : Les Règles l'emportent sur les suggestions de l'utilisateur.
+
+## Relation avec Skills et Workflows
+- **Règle vs Skill** : La Règle ordonne ("Tu DOIS faire du Design First"), le Skill exécute ("Voici COMMENT faire du CSS").
+- **Règle vs Workflow** : La Règle est la contrainte constante ("Ne jamais oublier la validation"), le Workflow est le chemin ("Étape 1, 2, 3"). Le Workflow doit être conçu pour respecter la Règle.
+
+## Comment demander à l'Agent de créer une Règle ?
+Pour créer une règle, ordonnez simplement la création en précisant le nom et la contrainte.
+
+**Exemple de Prompt :**
+> *"Crée une règle 'php-strict' qui oblige le typage fort dans toutes les fonctions PHP."*
+> *"Ajoute une règle 'validation-ui' qui empêche de coder le backend sans validation visuelle préalable."*
+
+L'agent utilisera son skill interne `creation-rule` pour générer le fichier markdown approprié dans `.agent/rules/`.

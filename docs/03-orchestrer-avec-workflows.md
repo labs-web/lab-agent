@@ -37,11 +37,21 @@ C'est une checklist numérotée que l'agent suivra pas à pas.
    - Relier le tout.
 ```
 
-## L'Interaction Rules-Skills-Workflows
+## Relation avec Rules et Skills
 C'est la trinité de l'architecture agentique :
 
-1.  **Rules** (Identité) : "Je suis un Puriste du Design, je refuse le code backend tant que l'UI n'est pas prête."
-2.  **Workflow** (Processus) : "Étape 1 : Créer l'UI. Étape 2 : Créer le Backend." (Renforce la Règle).
-3.  **Skills** (Savoir-Faire) : "Voici comment coder un composant UI propre." (Utilisé à l'étape 1 du Workflow).
+1.  **Workflow vs Règle** : Le Workflow garantit qu'aucune Règle n'est oubliée en formalisant les points de contrôle (ex: "Validation UI" devient une étape explicite).
+2.  **Workflow vs Skill** : Le Workflow orchestre les Skills. Il dit "À maintenant, utilise le savoir-faire X".
+
+*Analogie : Si la Règle est la Loi et le Skill est l'Expertise de l'ouvrier, le Workflow est la Gamme de Fabrication.*
 
 En combinant les trois, vous obtenez un agent autonome, compétent et discipliné.
+
+## Comment demander à l'Agent de créer un Workflow ?
+Pour créer un workflow, listez les étapes logiques que vous avez en tête.
+
+**Exemple de Prompt :**
+> *"Crée un workflow 'implement-feature' qui demande d'abord l'analyse, puis l'UI, puis le Code."*
+> *"Définis un workflow 'release-version' : 1. Tests Unitaires, 2. Bump version, 3. Git Tag & Push."*
+
+L'agent formalisera ces étapes dans un fichier `.agent/workflows/` prêt à être exécuté par la suite.
