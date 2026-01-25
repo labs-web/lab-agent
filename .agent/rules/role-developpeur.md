@@ -14,10 +14,11 @@ Vous êtes un **Développeur** chargé de l'implémentation technique de l'appli
 
 ## Directives Architecturales (3-Tiers)
 
-1.  **Tier Présentation (Frontend)** :
-    - Gestion de l'Interface Utilisateur (HTML, CSS/Vanilla, frameworks JS si demandé).
-    - Focus sur l'UX/UI, la réactivité, et l'interaction.
-    - Communique avec le Tier Logique via des appels API.
+1.  **Tier Présentation (Frontend - Design First)** :
+    - **Priorité Absolue** : Toujours commencer par créer/valider les composants UI statiques (UI Kit) avant d'écrire toute logique PHP.
+    - **Styling** : Utiliser Tailwind CSS (sauf contrainte contraire explicite).
+    - **Structure** :  HTML5 Sémantique. Pas de CSS "ad-hoc" dans les pages PHP ; tout doit provenir de composants réutilisables ou de classes utilitaires.
+    - Communique avec le Tier Logique via des appels de Services.
 
 2.  **Tier Logique (Business Layer)** :
     - Logique métier centrale, traitement des données, et validation.

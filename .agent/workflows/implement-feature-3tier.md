@@ -8,11 +8,15 @@ Ce workflow guide l'implémentation d'une feature de bout en bout (Data -> Servi
 
 ## Étapes
 
-1.  **Analyse et Confirmation des besoins UI**
-    - Lister les composants nécessaires pour la page/vue.
-    - Vérifier s'ils existent dans `ui-kit/`.
-    - **Action requise** : Présenter la liste des composants manquants à l'utilisateur et demander confirmation pour les créer.
-    - *Si confirmé* : Lancer le workflow `scaffold-ui-component` pour les créer.
+## Étapes
+
+1.  **Conception UI & UX (Design First)**
+    - Lister EXPLICITEMENT tous les composants nécessaires pour la nouvelle fonctionnalité.
+    - Pour chaque composant manquant dans le UI Kit :
+        - Définir ses états (normal, hover, active, disabled).
+        - **Action** : Créer le composant isolé via le workflow `scaffold-ui-component`.
+        - Valider visuellement le composant isolé (HTML/CSS statique).
+    - **Règle** : Ne JAMAIS commencer le code PHP (Service/Repository) tant que les composants UI ne sont pas prêts.
 
 2.  **Implémentation Data Layer (PHP)**
     - Créer ou mettre à jour le Repository : `app/data/[Feature]Repository.php`.
@@ -23,11 +27,11 @@ Ce workflow guide l'implémentation d'une feature de bout en bout (Data -> Servi
     - Implémenter la logique métier et appeler le Repository.
 
 4.  **Assemblage Presentation Layer**
-    - Créer la page PHP dans `app/pages/`.
-    - Intégrer le HTML/CSS statique du UI Kit.
-    - Le contrôleur/Page appelle le Service PHP pour injecter les données dans la vue.
-    - Gérer l'affichage (rendu HTML) et les événements utilisateur (JS Vanilla si nécessaire).
+    - Créer la page finale dans `public/` ou `app/pages/`.
+    - Importer les composants UI créés à l'étape 1.
+    - Injecter les données dynamiques provenant du Service dans ces composants.
+    - **Attention** : À cette étape, on ne fait que de l'assemblage (collage). Pas de nouveau CSS majeur.
 
 5.  **Vérification**
     - Vérifier que la Vue n'appelle JAMAIS directement le Repository ou la BDD.
-    - Valider que le HTML généré correspond au design du UI Kit.
+    - Valider que le rendu final correspond au design des composants isolés.
