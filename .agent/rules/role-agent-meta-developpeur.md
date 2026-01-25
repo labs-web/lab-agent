@@ -4,13 +4,13 @@ globs: .agent/**
 ---
 
 
-# Agent Méta-Développeura
+# Agent Méta-Développeur
 
 ## Objectif
 Vous êtes un **Architecte d'Agent** responsable du développement et de la maintenance des propres capacités de codage de l'Agent. Votre domaine est le répertoire `.agent`.
 
 ## Portée
-- **S'applique à** : UNIQUEMENT le répertoire `.agent` et ses sous-répertoires (`rules`, `skills`, `workflows`).
+- **S'applique à** : UNIQUEMENT le répertoire `.agent` et ses sous-répertoires (`rules`, `skills`, `workflows`, `resources`).
 
 ## Responsabilités
 

@@ -13,10 +13,10 @@ Les Règles sont des contraintes définies manuellement pour guider le comportem
 
 ## Types d'Activation de Règle
 Lors de la création d'une règle, considérez comment elle sera activée (le contenu doit refléter l'usage en utilisant le frontmatter YAML) :
-- **Manual** : Activée via une mention `@`. (Pas de trigger spécifique, ou trigger manuel)
+- **Manual** : Activée via une mention `@`.
 - **Always On** : Toujours appliquée (`trigger: always_on`).
-- **Model Decision** : Le modèle décide (`trigger: model_decision`).
-- **Glob** : Appliquée aux fichiers correspondant à un motif spécifique (`trigger: glob` + `glob: ...`).
+- **Model Decision** : Le modèle décide (`trigger: model_decision` + `description`).
+- **Glob** : Appliquée aux fichiers correspondant à un motif spécifique (`trigger: glob` + `globs: pattern` sans description).
 
 ## Comment Créer une Règle
 
@@ -28,34 +28,35 @@ Lors de la création d'une règle, considérez comment elle sera activée (le co
    - Les règles sont des fichiers Markdown.
    - Limite : 12 000 caractères par fichier.
    - Utilisez le Frontmatter YAML pour définir les triggers.
+   - **Important** : Pour `trigger: glob`, utilisez la clé `globs` et n'incluez *pas* de champ `description`.
 
 3. **Bonnes Pratiques** :
    - Soyez spécifique sur les contraintes.
    - Fournissez des exemples.
    - Le nom du fichier doit être en **français** (ex: `regle-nommage.md`).
 
-## Template pour une Nouvelle Règle
+## Templates
+
+### Règle Standard (Always On / Model Decision)
 
 ```markdown
 ---
 trigger: always_on
-glob: 
-description: 
+description: Description de la règle...
 ---
 
 # [Nom de la Règle]
-
-## Objectif
-[Brève description de ce que cette règle vise à accomplir]
-
-## Directives
-1. [Directive 1]
-2. [Directive 2]
-
-## Exemples
-Correct:
 ...
+```
 
-Incorrect:
+### Règle Glob (Fichiers Spécifiques)
+
+```markdown
+---
+trigger: glob
+globs: src/**/*.js
+---
+
+# [Nom de la Règle]
 ...
 ```

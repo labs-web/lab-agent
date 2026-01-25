@@ -1,7 +1,6 @@
 ---
-trigger: always_on
-glob: "!**/.agent/**"
-description: Définit le persona de Développeur Expert pour le développement d'applications 3-tiers, appliqué à la base de code excluant le dossier .agent.
+trigger: glob
+globs: "!**/.agent/**"
 ---
 
 # Expert Développeur 3-Tiers
