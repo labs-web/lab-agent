@@ -16,6 +16,6 @@ Au début de votre réponse principale, affichez une ligne d'information résuma
 
 ## Exemple
 
-**Contexte de l'Agent** : **Rôle** : Agent Auto-Configurateur | **Skills** : creation-skill | **Workflow** : Aucun
+**Contexte de l'Agent** : **Rôle** : Consultant Technique | **Skills** : ui-kit-master | **Workflow** : Aucun
 
 [Votre réponse normale ici...]

@@ -16,4 +16,10 @@ class ArticleRepository
         $stmt->execute(['id' => $id]);
         return $stmt->fetch();
     }
+
+    public function findAll()
+    {
+        $stmt = $this->db->query("SELECT * FROM articles ORDER BY created_at DESC");
+        return $stmt->fetchAll();
+    }
 }

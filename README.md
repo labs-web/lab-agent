@@ -23,16 +23,23 @@ Application de gestion des articles
 
 ## Installation
 
-1. **Base de données** :
-   - Créez une base de données MySQL.
-   - Importez le fichier `setup_db.sql` situé à la racine pour créer la structure et les données.
-   - Configurez les accès dans `config.php`.
+1. **Configuration** :
+   - Ouvrez `config.php` et configurez les accès à votre base de données (Hôte, Utilisateur, Mot de passe).
 
-2. **Démarrage** :
+2. **Base de données** :
+   - Lancez le script d'installation automatique :
+     - **En ligne de commande** :
+       ```bash
+       php install.php
+       ```
+     - **Ou via le navigateur** (après démarrage du serveur) :
+       [http://localhost:8000/install.php](http://localhost:8000/install.php)
+
+3. **Démarrage** :
    - Lancez le serveur local PHP :
      ```bash
      php -S localhost:8000
      ```
 
-3. **Utilisation** :
+4. **Utilisation** :
    - Accédez à la page d'un article : [http://localhost:8000/public/article.php?id=1](http://localhost:8000/public/article.php?id=1)

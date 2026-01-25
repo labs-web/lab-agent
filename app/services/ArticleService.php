@@ -19,4 +19,9 @@ class ArticleService
 
         return $this->articleRepository->find($id);
     }
+
+    public function getAllArticles()
+    {
+        return $this->articleRepository->findAll();
+    }
 }

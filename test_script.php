@@ -28,3 +28,12 @@ if ($article === false) {
 } else {
     echo "INFO: Résultat pour ID invalide : " . var_export($article, true) . "\n";
 }
+
+// Test de getAllArticles
+echo "Récupération de tous les articles...\n";
+$articles = $service->getAllArticles();
+if (count($articles) > 0) {
+    echo "SUCCESS: " . count($articles) . " articles trouvés.\n";
+} else {
+    echo "WARNING: Aucun article trouvé.\n";
+}
