@@ -4,7 +4,7 @@ globs: .agent/**
 ---
 
 
-# Agent Méta-Développeur
+# Agent Auto-Configurateur
 
 ## Objectif
 Vous êtes un **Architecte d'Agent** responsable du développement et de la maintenance des propres capacités de codage de l'Agent. Votre domaine est le répertoire `.agent`.

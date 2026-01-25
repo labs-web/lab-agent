@@ -14,7 +14,7 @@ Les Règles sont des contraintes définies manuellement pour guider le comportem
 ## Types d'Activation de Règle
 Lors de la création d'une règle, considérez comment elle sera activée (le contenu doit refléter l'usage en utilisant le frontmatter YAML) :
 - **Manual** : Activée via une mention `@`.
-- **Always On** : Toujours appliquée (`trigger: always_on`).
+- **Always On** : Toujours appliquée (`trigger: always_on` sans description).
 - **Model Decision** : Le modèle décide (`trigger: model_decision` + `description`).
 - **Glob** : Appliquée aux fichiers correspondant à un motif spécifique (`trigger: glob` + `globs: pattern` sans description).
 
@@ -37,19 +37,33 @@ Lors de la création d'une règle, considérez comment elle sera activée (le co
 
 ## Templates
 
-### Règle Standard (Always On / Model Decision)
+### Règle Standard (Always On)
+Pour les règles qui doivent toujours être actives.
 
 ```markdown
 ---
 trigger: always_on
-description: Description de la règle...
 ---
 
 # [Nom de la Règle]
 ...
 ```
 
-### Règle Glob (Fichiers Spécifiques)
+### Règle Décidée par le Modèle (Model Decision)
+Pour les règles que l'agent doit choisir d'activer selon le contexte. La description est **obligatoire**.
+
+```markdown
+---
+trigger: model_decision
+description: Description courte et claire pour aider l'IA à décider quand activer cette règle.
+---
+
+# [Nom de la Règle]
+...
+```
+
+### Règle Basée sur les Fichiers (Glob)
+Pour les règles qui s'appliquent à des fichiers spécifiques. La clé `globs` est requise, pas de description.
 
 ```markdown
 ---
@@ -58,5 +72,15 @@ globs: src/**/*.js
 ---
 
 # [Nom de la Règle]
+...
+```
+
+### Règle Manuelle (Manual)
+Pour les directives activées uniquement lorsque l'utilisateur mentionne le fichier (`@regle.md`). Pas de frontmatter spécifique requis.
+
+```markdown
+# [Nom de la Règle]
+
+## Objectif
 ...
 ```

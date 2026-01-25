@@ -1,6 +1,5 @@
 ---
 trigger: always_on
-description: Impose la communication en français tout en préservant la terminologie technique anglaise.
 ---
 
 # Langue Française & Terminologie Technique
