@@ -16,13 +16,17 @@ if (isset($_GET['id'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
-        <?php echo $article ? htmlspecialchars($article['title']) : 'Article non trouvé'; ?>
+        <?php echo $article ? htmlspecialchars($article['title']) : 'Article non trouvé'; ?> - Lab Agent
     </title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
 
 <body>
     <div class="container">
+        <a href="index.php" class="back-link">← Retour aux articles</a>
+
         <?php if ($article): ?>
             <article class="article-content">
                 <h1>
@@ -36,9 +40,10 @@ if (isset($_GET['id'])) {
                 </div>
             </article>
         <?php else: ?>
-            <div class="error">
-                <h1>Article introuvable</h1>
-                <p>Désolé, l'article demandé n'existe pas.</p>
+            <div class="error-page">
+                <h1>404</h1>
+                <p>Oups ! L'article que vous cherchez semble avoir disparu dans le néant numérique.</p>
+                <a href="index.php" class="btn">Retour à l'accueil</a>
             </div>
         <?php endif; ?>
     </div>
