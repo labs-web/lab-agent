@@ -5,10 +5,25 @@ trigger: always_on
 # Protocole Méthodologique et Pédagogie
 
 ## 1. Cycle de Développement "UI-First" (Ordre Immuable)
-Pour toute nouvelle fonctionnalité, l'agent doit suivre scrupuleusement cet ordre :
-1.  **Phase d'Analyse** : Décomposition des besoins, identification des composants et des responsabilités 3-tiers.
-2.  **Phase UI-Kit (Statique)** : Création des composants HTML/Tailwind avec données "Mocks" dans `ui-kit/`.
-3.  **Phase d'Intégration** : Câblage final entre le Controller, le Service et le Model après validation visuelle.
+Pour toute nouvelle fonctionnalité, l'agent doit OBLIGATOIREMENT suivre cet ordre strict et identifier les Skills/Workflows appropriés :
+
+### PHASE 1 : Analyse & Atomisation UI (Design System)
+**Avant toute ligne de code**, l'agent doit scanner le projet pour identifier les composants UI.
+- **Objectif** : Détecter les composants nécessaires (Boutons, Cards, Inputs...) et valider leur existence.
+- **Règle d'Or** : **Toujours vérifier si un composant existe déjà** dans le `ui-kit/` pour éviter les doublons.
+- **Livrable** : Plan d'action listant les composants à réutiliser vs les nouveaux à créer.
+- **Skill Requis** : `ui-designer-tailwind` (Mode Analyse).
+
+### PHASE 2 : Prototypage Statique (UI-Kit)
+Création des composants HTML/Tailwind isolés avec données "Mocks".
+- **Lieu** : Uniquement dans le dossier `ui-kit/`.
+- **Interdiction** : Aucune logique PHP ni dépendance backend à ce stade.
+- **Skill Requis** : `ui-designer-tailwind`.
+
+### PHASE 3 : Intégration & Logique (Architecture 3-Tiers)
+Câblage final entre le Controller, le Service et le Model une fois le design validé.
+- **Flux d'Implémentation** : `Model` (Données) -> `Service` (Logique) -> `Controller` (Orchestration).
+- **Skills Requis** : `business-logic-expert` (Backend) puis `tier1-integrator` (Frontend/Routing).
 
 ## 2. Validation et Points d'Arrêt (Checkpoints)
 - **Validation UI Obligatoire** : Tout élément visuel doit être validé par le développeur avant d'être intégré à la logique métier.
