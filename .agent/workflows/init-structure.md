@@ -16,16 +16,16 @@ Ce workflow doit être exécuté une seule fois au début du projet pour génér
 6. Créer le dossier `Models` pour le Tier 3 (Données).
 7. Créer le dossier `ui-kit` pour le prototypage statique.
 
-## Étape 2 : Configuration de l'Autoloading (Composer)
-- **Fichier** : Créer `composer.json` à la racine.
+## Étape 2 : Configuration de l'Autoloading (Native PHP)
+- **Fichier** : Créer `autoload.php` à la racine.
 - **Contenu** : 
-  - Définir le namespace racine `App\` pointant vers `./`.
-  - Exiger PHP 8.2+.
-  - Activer l'autoload PSR-4.
+  - Utiliser `spl_autoload_register`.
+  - Mapper le namespace `App\` vers la racine `./`.
+  - Scanner les dossiers pour inclure les classes dynamiquement si nécessaire.
 
 ## Étape 3 : Fichiers de Démarrage
 1. **Contrôleur Frontal** : Créer `public/index.php`.
-   - Charger l'autoloader de Composer.
+   - Charger l'autoloader natif : `require_once __DIR__ . '/../autoload.php';`.
    - Initialiser la gestion des erreurs.
    - (Placeholder) Point d'entrée du routage.
 2. **Configuration DB** : Créer `config/database.php`.
@@ -34,5 +34,6 @@ Ce workflow doit être exécuté une seule fois au début du projet pour génér
 
 ## Étape 4 : Validation
 - Vérifier que tous les dossiers existent.
-- Lancer `composer dump-autoload` (si composer est disponible) pour valider la map.
+- Vérifier que tous les dossiers existent.
+- Créer un script de test `test_autoload.php` pour valider que les classes `App\` sont bien chargées.
 - Confirmer à l'utilisateur : "Structure 3-Tiers initialisée. Prêt à démarrer le développement."

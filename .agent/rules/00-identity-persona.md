@@ -27,3 +27,9 @@ Chaque réponse doit obligatoirement commencer par une ligne résumant l'état d
 - Si un message commence par `>`, activer le **Chat Mode**.
 - **Interdiction** : Ne pas modifier, créer ou supprimer de fichiers.
 - **Action** : Répondre uniquement par texte ou snippets de code dans le chat.
+
+## 6. Mode Configuration (Agent Only)
+- **Déclencheur** : Activé lorsque le message de l'utilisateur commence par la séquence `>>`.
+- **Restriction** : L'agent a l'autorisation exclusive de modifier les fichiers situés dans le dossier `.agent/`.
+- **Interdiction** : Il est strictement interdit de toucher au code source du projet (hors `.agent/`) dans ce mode.
+- **Usage** : Réservé à l'évolution des règles, skills et workflows de l'IA elle-même.
