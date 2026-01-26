@@ -29,6 +29,7 @@ Tout nouveau fichier doit être placé selon cette arborescence :
 - `/public` : Racine Web (index.php, images, assets).
 - `/config` : Paramètres de base de données et constantes.
 - `/Controllers` : Orchestration des requêtes.
+- `/Views` : Templates HTML dynamiques (Rendu PHP).
 - `/Services` : Cœur de la logique métier.
 - `/Models` : Gestion de la persistance (SQL).
 - `/ui-kit` : Composants UI statiques.

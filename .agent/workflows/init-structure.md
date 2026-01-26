@@ -1,0 +1,38 @@
+---
+description: Initialisation de la structure complète du projet selon l'architecture 3-Tiers
+---
+
+# Workflow : Initialisation de la Structure du Projet
+
+Ce workflow doit être exécuté une seule fois au début du projet pour générer l'arborescence standard et les fichiers de configuration de base conformes à l'architecture définie.
+
+## Étape 1 : Création de l'Arborescence
+// turbo-all
+1. Créer le dossier `public` pour la racine web.
+2. Créer le dossier `config` pour la configuration.
+3. Créer le dossier `Controllers` pour le Tier 1 (Présentation).
+4. Créer le dossier `Views` pour les templates HTML.
+5. Créer le dossier `Services` pour le Tier 2 (Logique Métier).
+6. Créer le dossier `Models` pour le Tier 3 (Données).
+7. Créer le dossier `ui-kit` pour le prototypage statique.
+
+## Étape 2 : Configuration de l'Autoloading (Composer)
+- **Fichier** : Créer `composer.json` à la racine.
+- **Contenu** : 
+  - Définir le namespace racine `App\` pointant vers `./`.
+  - Exiger PHP 8.2+.
+  - Activer l'autoload PSR-4.
+
+## Étape 3 : Fichiers de Démarrage
+1. **Contrôleur Frontal** : Créer `public/index.php`.
+   - Charger l'autoloader de Composer.
+   - Initialiser la gestion des erreurs.
+   - (Placeholder) Point d'entrée du routage.
+2. **Configuration DB** : Créer `config/database.php`.
+   - Retourner un tableau de configuration pour PDO (Host, DBName, User, Pass).
+3. **Ignore** : Créer un `.gitignore` standard (vendor/, .env, etc.).
+
+## Étape 4 : Validation
+- Vérifier que tous les dossiers existent.
+- Lancer `composer dump-autoload` (si composer est disponible) pour valider la map.
+- Confirmer à l'utilisateur : "Structure 3-Tiers initialisée. Prêt à démarrer le développement."

@@ -4,7 +4,7 @@ Ce workflow est la phase finale. Il consiste à construire le moteur de la fonct
 
 ## Étape 1 : Construction du Tier 3 (Data Layer)
 - **Action** : Utiliser le skill `pdo-expert`.
-- **Livrable** : Création ou mise à jour du Model dans `src/Models/`.
+- **Livrable** : Création ou mise à jour du Model dans `/Models/`.
 - **Exigence** : 
     - Définir les méthodes CRUD nécessaires (ex: `save()`, `findAll()`).
     - Utiliser exclusivement du SQL préparé via PDO.
@@ -12,14 +12,14 @@ Ce workflow est la phase finale. Il consiste à construire le moteur de la fonct
 
 ## Étape 2 : Construction du Tier 2 (Service Layer)
 - **Action** : Utiliser le skill `clean-php-logic`.
-- **Livrable** : Création du Service dans `src/Services/`.
+- **Livrable** : Création du Service dans `/Services/`.
 - **Exigence** : 
     - Implémenter la logique métier (calculs, validations de règles).
     - Gérer les exceptions de domaine (ex: `ArticleTitleTooShortException`).
     - Le Service doit être le seul à appeler le Model.
 
 ## Étape 3 : Construction du Tier 1 (Presentation Layer)
-- **Action** : Création/Mise à jour du Controller dans `src/Controllers/`.
+- **Action** : Création/Mise à jour du Controller dans `/Controllers/`.
 - **Livrable** : Méthodes de gestion de la requête (Request/Response).
 - **Flux de données** : 
     - Récupérer les données entrantes (via `$_POST` ou `$_GET`).
@@ -28,7 +28,7 @@ Ce workflow est la phase finale. Il consiste à construire le moteur de la fonct
 - **Règle SSR** : Pas de retour JSON. Le contrôleur doit inclure une vue PHP.
 
 ## Étape 4 : Intégration de la Vue Finale
-- **Action** : Transformer le composant statique du `ui-kit/` en une vue dynamique dans `src/Views/`.
+- **Action** : Transformer le composant statique du `ui-kit/` en une vue dynamique dans `/Views/`.
 - **Liaison** : Remplacer les variables de "Mock" par les données réelles injectées par le Controller.
 - **Formulaires** : S'assurer que les balises `<form>` pointent vers les bonnes routes avec la méthode `POST`.
 
