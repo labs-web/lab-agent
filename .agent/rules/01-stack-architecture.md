@@ -28,10 +28,9 @@ L'application doit être scrupuleusement découpée en trois couches hermétique
 Tout nouveau fichier doit être placé selon cette arborescence :
 - `/public` : Racine Web (index.php, images, assets).
 - `/config` : Paramètres de base de données et constantes.
-- `/src/Controllers` : Orchestration des requêtes.
-- `/src/Services` : Cœur de la logique métier.
-- `/src/Models` : Gestion de la persistance (SQL).
-- `/src/Views` : Templates PHP/HTML 
+- `/Controllers` : Orchestration des requêtes.
+- `/Services` : Cœur de la logique métier.
+- `/Models` : Gestion de la persistance (SQL).
 - `/ui-kit` : Composants UI statiques.
 
 ## 5. Directive de Conformité
