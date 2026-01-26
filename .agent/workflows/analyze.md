@@ -1,3 +1,6 @@
+---
+description: Workflow d'analyse technique et de décomposition UI préalable au développement
+---
 # Workflow : Analyse Technique & Décomposition UI
 
 Ce workflow est la première étape obligatoire avant toute génération de code. Il sert à valider la compréhension métier et l'architecture visuelle.
@@ -11,8 +14,11 @@ Ce workflow est la première étape obligatoire avant toute génération de code
 
 ## Étape 2 : Décomposition de l'Interface (UI-First)
 - **Objectif** : Anticiper la structure du UI-Kit.
-- **Livrable** : Une liste de composants à créer dans `ui-kit/`.
-    - **Atomes** : Boutons, labels, inputs.
+- **Livrable** : Un plan d'action UI basé sur `ui-kit/components-manifest.yaml`.
+    - **Vérification** : Consulter le manifeste pour identifier les composants existants (`validated` ou `draft`).
+    - **Identification** : Lister les composants manquants à créer dans `ui-kit/`.
+    - **Typologie** :
+        - **Atomes** : Boutons, labels, inputs.
     - **Molécules/Organismes** : Formulaires, tableaux de données, cartes, barres de recherche.
 - **États Visuels** : Lister les états à prévoir (Chargement, Vide, Erreur, Succès).
 

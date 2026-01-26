@@ -1,3 +1,6 @@
+---
+description: Workflow d'implémentation backend 3-tiers et d'intégration finale de la vue
+---
 # Workflow : Implémentation 3-Tiers & Câblage Logique
 
 Ce workflow est la phase finale. Il consiste à construire le moteur de la fonctionnalité derrière l'interface déjà validée dans le UI-Kit.
@@ -27,10 +30,14 @@ Ce workflow est la phase finale. Il consiste à construire le moteur de la fonct
     - Gérer le succès ou l'échec (Redirection avec message flash ou rendu de vue).
 - **Règle SSR** : Pas de retour JSON. Le contrôleur doit inclure une vue PHP.
 
-## Étape 4 : Intégration de la Vue Finale
-- **Action** : Transformer le composant statique du `ui-kit/` en une vue dynamique dans `/Views/`.
-- **Liaison** : Remplacer les variables de "Mock" par les données réelles injectées par le Controller.
-- **Formulaires** : S'assurer que les balises `<form>` pointent vers les bonnes routes avec la méthode `POST`.
+## Étape 4 : Intégration de la Vue Finale (Mapping UI-Kit)
+- **Action** : Créer le fichier final `.php` dans `/Views/` en se basant STRICTEMENT sur le fichier HTML validé du `/ui-kit/`.
+- **Règle d'Hydratation** :
+    - Copier le HTML du composant `ui-kit` vers la vue.
+    - Remplacer les données "Mocks" par les variables PHP (`$article->title`, etc.).
+    - **Sécurité XSS** : Tout écho PHP doit être sécurisé : `<?= htmlspecialchars($var) ?>`.
+- **Formulaires** : S'assurer que les balises `<form>` pointent vers les bonnes routes (attribut `action`) avec la méthode `POST`.
+- **Note** : Ne jamais réinventer le design à cette étape. On "hydrate" simplement le design validé.
 
 ## Étape 5 : Revue de Qualité & Finalisation (Checkpoint)
 - **Action de l'Agent** : Faire un récapitulatif du code généré pour les 3 couches.

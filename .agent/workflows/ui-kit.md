@@ -1,3 +1,6 @@
+---
+description: Workflow de création et validation des composants statiques UI-Kit
+---
 # Workflow : Développement de Composants UI-Kit (Statique)
 
 Ce workflow intervient après la validation de l'analyse. Son but est de produire le "Tier 1" (Présentation) de manière isolée et rigoureuse.
