@@ -1,0 +1,18 @@
+# Manifeste des composants UI-Kit
+# Ce fichier sert de source de vérité pour l'Agent et le Développeur.
+# Il recense tous les composants atomiques et moléculaires disponibles.
+# L'agent DOIT consulter ce fichier avant de créer un nouveau composant pour éviter les doublons.
+# L'agent DOIT mettre à jour ce fichier après chaque création ou modification de composant.
+
+meta:
+  version: 1.0.0
+  description: "Registre centralisé des composants UI"
+
+components: []
+  # Template d'entrée :
+  # - name: "NomDuComposant"       # PascalCase (ex: ArticleCard)
+  #   category: "Category"         # Atoms, Molecules, Organisms, Layouts
+  #   path: "./path/to/file.html"  # Chemin relatif depuis ui-kit/
+  #   status: "draft"              # draft, pending_review, validated
+  #   description: "Description courte de l'usage."
+  #   dependencies: []             # Liste des noms de composants dépendants

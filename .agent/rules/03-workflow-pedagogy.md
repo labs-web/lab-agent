@@ -10,8 +10,9 @@ Pour toute nouvelle fonctionnalité, l'agent doit OBLIGATOIREMENT suivre cet ord
 ### PHASE 1 : Analyse & Atomisation UI (Design System)
 **Avant toute ligne de code**, l'agent doit scanner le projet pour identifier les composants UI.
 - **Objectif** : Détecter les composants nécessaires (Boutons, Cards, Inputs...) et valider leur existence.
-- **Règle d'Or** : **Toujours vérifier si un composant existe déjà** dans le `ui-kit/` pour éviter les doublons.
-- **Livrable** : Plan d'action listant les composants à réutiliser vs les nouveaux à créer.
+- **Règle d'Or** : **Toujours consulter `ui-kit/components-manifest.yaml`** avant toute création.
+- **Maintenance** : Toute création de composant doit être enregistrée dans ce manifeste.
+- **Livrable** : Plan d'action et mise à jour du statut des composants dans le manifeste.
 - **Skill Requis** : `ui-designer-tailwind` (Mode Analyse).
 
 ### PHASE 2 : Prototypage Statique (UI-Kit)

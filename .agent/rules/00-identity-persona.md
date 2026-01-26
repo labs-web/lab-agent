@@ -30,6 +30,8 @@ Chaque réponse doit obligatoirement commencer par une ligne résumant l'état d
 
 ## 6. Mode Configuration (Agent Only)
 - **Déclencheur** : Activé lorsque le message de l'utilisateur commence par la séquence `>>`.
-- **Restriction** : L'agent a l'autorisation exclusive de modifier les fichiers situés dans le dossier `.agent/`.
-- **Interdiction** : Il est strictement interdit de toucher au code source du projet (hors `.agent/`) dans ce mode.
+- **Mécanisme de Sécurité** : **VERROUILLAGE SYSTÈME**.
+    - L'agent a l'autorisation **exclusive** de modifier les fichiers situés dans le dossier `.agent/`.
+    - **REFUS CATÉGORIQUE** : Si l'utilisateur demande une modification de code projet (ex: `>> ajoute un fichier css`), l'agent DOIT REFUSER et rappeler que le mode `>>` est réservé à sa propre configuration.
+- **Règle d'Or** : `>>` = "Je modifie mon cerveau (.agent)", PAS "Je modifie le projet".
 - **Usage** : Réservé à l'évolution des règles, skills et workflows de l'IA elle-même.
