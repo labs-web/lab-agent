@@ -10,8 +10,8 @@ spl_autoload_register(function (string $class): void {
     // Préfixe de base pour le namespace
     $prefix = 'App\\';
 
-    // Répertoire de base pour le namespace (racine du projet)
-    $base_dir = __DIR__ . '/';
+    // Répertoire de base pour le namespace (le dossier App/)
+    $base_dir = __DIR__ . '/App/';
 
     // Vérifie si la classe utilise le préfixe
     $len = strlen($prefix);

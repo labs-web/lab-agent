@@ -10,17 +10,20 @@ Ce workflow doit être exécuté une seule fois au début du projet pour génér
 // turbo-all
 1. Créer le dossier `public` pour la racine web.
 2. Créer le dossier `config` pour la configuration.
-3. Créer le dossier `Controllers` pour le Tier 1 (Présentation).
-4. Créer le dossier `Views` pour les templates HTML.
-5. Créer le dossier `Services` pour le Tier 2 (Logique Métier).
-6. Créer le dossier `Models` pour le Tier 3 (Données).
-7. Créer le dossier `ui-kit` pour le prototypage statique.
+3. Créer le dossier `App` pour le code source (Classes).
+4. Créer le dossier `App/Controllers` pour le Tier 1.
+5. Créer le dossier `App/Services` pour le Tier 2.
+6. Créer le dossier `App/Models` pour le Tier 3, avec :
+   - `App/Models/Entities`
+   - `App/Models/Repositories`
+7. Créer le dossier `Views` pour les templates HTML.
+8. Créer le dossier `ui-kit` pour le prototypage statique.
 
 ## Étape 2 : Configuration de l'Autoloading (Native PHP)
 - **Fichier** : Créer `autoload.php` à la racine.
 - **Contenu** : 
   - Utiliser `spl_autoload_register`.
-  - Mapper le namespace `App\` vers la racine `./`.
+  - Mapper le namespace `App\` vers le dossier `App/`.
   - Scanner les dossiers pour inclure les classes dynamiquement si nécessaire.
 
 ## Étape 3 : Fichiers de Démarrage
