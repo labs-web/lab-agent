@@ -18,6 +18,14 @@ Ce workflow doit être exécuté une seule fois au début du projet pour génér
    - `App/Models/Repositories`
 7. Créer le dossier `Views` pour les templates HTML.
 8. Créer le dossier `ui-kit` pour le prototypage statique.
+9. Dans `ui-kit`, créer le fichier `components-manifest.yaml` avec le contenu initial suivant :
+   ```yaml
+   # Manifeste des composants UI-Kit
+   meta:
+     version: 1.0.0
+     description: "Registre centralisé des composants UI"
+   components: []
+   ```
 
 ## Étape 2 : Configuration de l'Autoloading (Native PHP)
 - **Fichier** : Créer `autoload.php` à la racine.
