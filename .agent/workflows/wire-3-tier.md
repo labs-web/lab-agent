@@ -6,7 +6,7 @@ description: Workflow d'implémentation backend 3-tiers et d'intégration finale
 Ce workflow est la phase finale. Il consiste à construire le moteur de la fonctionnalité derrière l'interface déjà validée dans le UI-Kit.
 
 ## Étape 1 : Construction du Tier 3 (Data Layer)
-- **Action** : Utiliser le skill `pdo-expert`.
+- **Action** : Utiliser le skill `pdo-repository-master`.
 - **Livrable** : Création ou mise à jour du Model dans `/Models/`.
 - **Exigence** : 
     - Définir les méthodes CRUD nécessaires (ex: `save()`, `findAll()`).
@@ -14,7 +14,7 @@ Ce workflow est la phase finale. Il consiste à construire le moteur de la fonct
     - Créer une classe `Entity` (readonly) pour représenter les données si nécessaire.
 
 ## Étape 2 : Construction du Tier 2 (Service Layer)
-- **Action** : Utiliser le skill `clean-php-logic`.
+- **Action** : Utiliser le skill `business-logic-expert`.
 - **Livrable** : Création du Service dans `/Services/`.
 - **Exigence** : 
     - Implémenter la logique métier (calculs, validations de règles).
@@ -23,6 +23,7 @@ Ce workflow est la phase finale. Il consiste à construire le moteur de la fonct
 
 ## Étape 3 : Construction du Tier 1 (Presentation Layer)
 - **Action** : Création/Mise à jour du Controller dans `/Controllers/`.
+- **Skill Requis** : `tier1-integrator`.
 - **Livrable** : Méthodes de gestion de la requête (Request/Response).
 - **Flux de données** : 
     - Récupérer les données entrantes (via `$_POST` ou `$_GET`).

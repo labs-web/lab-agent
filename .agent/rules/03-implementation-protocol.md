@@ -2,47 +2,34 @@
 trigger: always_on
 ---
 
-# Protocole d'Implémentation et Méthodologie
+# Protocole d'Implémentation (Principes Directeurs)
 
-## 1. Cycle de Développement "UI-First" (Ordre Immuable)
-Pour toute nouvelle fonctionnalité, l'agent doit OBLIGATOIREMENT suivre cet ordre strict et identifier les Skills/Workflows appropriés :
+## 1. Principe "UI-First" & Workflows
+L'agent doit impérativement respecter l'ordre de développement défini par les workflows situés dans `.agent/workflows/`.
 
-### PHASE 1 : Analyse & Atomisation UI (Design System)
-**Avant toute ligne de code**, l'agent doit scanner le projet pour identifier les composants UI.
-- **Objectif** : Détecter les composants nécessaires (Boutons, Cards, Inputs...) et valider leur existence.
-- **Règle d'Or** : **Toujours consulter `ui-kit/components-manifest.yaml`** avant toute création.
-- **Maintenance** : Toute création de composant doit être enregistrée dans ce manifeste.
-- **Livrable** : Liste des composants identifiés à créer (Proposition).
-- **STOP OBLIGATOIRE** : L'agent **DOIT ATTENDRE** la validation explicite de la liste des composants par le développeur avant de mettre à jour le manifeste ou de créer les fichiers physiques.
-- **Skill Requis** : `ui-designer-tailwind` (Mode Analyse).
+**Règle d'Or** : On ne code jamais le backend (Tier 2/3) avant d'avoir validé l'interface statique (Tier 1 / UI-Kit).
 
-### PHASE 2 : Prototypage Statique (UI-Kit)
-Création des composants HTML/Tailwind isolés avec données "Mocks".
-- **Lieu** : Uniquement dans le dossier `ui-kit/`.
-- **Interdiction** : Aucune logique PHP ni dépendance backend à ce stade.
-- **Skill Requis** : `ui-designer-tailwind`.
-- **STOP OBLIGATOIRE** : L'agent **DOIT ATTENDRE** la validation visuelle du développeur sur les fichiers statiques avant de passer à l'intégration Backend.
+### Séquence Standard à Suivre :
+1.  **Analyse** : Utiliser le workflow `/analyze` pour décomposer le besoin.
+2.  **Visualisation** : Utiliser le workflow `/ui-kit` pour créer les composants statiques.
+3.  **Implémentation** : Utiliser le workflow `/wire-3-tier` pour câbler la logique.
 
-### PHASE 3 : Intégration & Logique (Architecture 3-Tiers)
-Câblage final entre le Controller, le Service et le Model une fois le design validé.
-- **Flux d'Implémentation** : `Model` (Données) -> `Service` (Logique) -> `Controller` (Orchestration).
-- **Skills Requis** : `business-logic-expert` (Backend) puis `tier1-integrator` (Frontend/Routing).
+> **Note** : Les détails techniques, les commandes à exécuter et les skills à appeler sont documentés exclusivement dans chaque fichier workflow mentionné ci-dessus.
 
 ## 2. Validation et Points d'Arrêt (Checkpoints)
-- **Validation PHASE Obligatoire** : L'agent doit demander une validation explicite UNIQUEMENT à la fin de chaque **GRANDE PHASE** (Phase 1, Phase 2, Phase 3).
-- **Autonomie Intra-Phase** : À l'intérieur d'une phase validée (ex: Phase 2 lancée), l'agent a l'autorité pour créer/modifier tous les fichiers nécessaires sans demander de permission étape par étape.
-- **Refus d'Assomption** : Ne jamais supposer qu'un design *final* est correct sans confirmation humaine à la fin de la Phase 2.
+- **Validation PHASE Obligatoire** : L'agent doit demander une validation explicite UNIQUEMENT à la fin de chaque workflow majeur (Analyse, UI-Kit, Implémentation).
+- **Autonomie Intra-Phase** : À l'intérieur d'un workflow validé, l'agent a l'autorité pour créer/modifier tous les fichiers nécessaires.
+- **Refus d'Assomption** : Ne jamais supposer qu'un design *final* est correct sans confirmation humaine.
 
 ## 3. Standard de Communication (Video Coding)
 - **Explication de l'Intention** : Avant de générer du code, l'agent doit expliquer brièvement l'objectif pédagogique et la règle respectée.
 - **Transparence** : Afficher systématiquement l'en-tête de contexte (Rôle, Skills, Workflow) au début de chaque réponse.
-- **Aide à la Lecture** : Utiliser des blocs de code aérés et des commentaires axés sur le "Pourquoi" pour faciliter la compréhension à l'écran.
+- **Aide à la Lecture** : Utiliser des blocs de code aérés et des commentaires axés sur le "Pourquoi".
 
 ## 4. Mode Chat (Conversationnel)
-- **Déclencheur** : Activé lorsque le message de l'utilisateur commence par le caractère `>`.
-- **Comportement** : L'agent passe en lecture seule. Il ne doit pas utiliser d'outils de modification de fichiers (`write_to_file`, etc.).
-- **Utilisation** : Idéal pour poser des questions théoriques ou analyser du code sans impacter le projet.
+- **Déclencheur** : Activé lorsque le message commence par `>`.
+- **Comportement** : Lecture seule. Pas de modification de fichiers.
 
 ## 5. Isolation du UI-Kit
 - Les fichiers dans `ui-kit/` doivent rester strictement statiques.
-- Ils doivent inclure leurs propres dépendances (ex: CDN Tailwind) pour être prévisualisables de manière autonome par le développeur.
+- Ils doivent inclure leurs propres dépendances pour être prévisualisables de manière autonome.

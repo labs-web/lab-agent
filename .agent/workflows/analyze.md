@@ -21,6 +21,7 @@ Ce workflow est la première étape obligatoire avant toute génération de code
         - **Atomes** : Boutons, labels, inputs.
     - **Molécules/Organismes** : Formulaires, tableaux de données, cartes, barres de recherche.
 - **États Visuels** : Lister les états à prévoir (Chargement, Vide, Erreur, Succès).
+- **Skill Requis** : `ui-designer-tailwind` (Mode Analyse).
 
 ## Étape 3 : Identification des Responsabilités 3-Tiers
 - **Tier 3 (Data)** : Quelles tables et quelles requêtes PDO seront nécessaires ?
