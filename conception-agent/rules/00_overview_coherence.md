@@ -12,43 +12,7 @@ L'agent est structuré autour de trois piliers qui se renforcent mutuellement :
 
 ## Diagramme de Flux Global
 
-```mermaid
-graph TD
-    subgraph Rules [Règles Transversales]
-        R1[Identity & Persona]
-        R2[Stack Architecture]
-        R3[Quality & Security]
-        R4[Implementation Protocol]
-    end
-
-    subgraph Workflows [Processus Séquentiels]
-        W_Init[Init Structure] --> W_Analyze[Analyze & UI Decomp]
-        W_Analyze --> W_UI[UI-Kit Dev]
-        W_UI --> W_Wire[3-Tier Implementation]
-    end
-
-    subgraph Skills [Capacités Spécialisées]
-        S_UI[UI Researcher / Tailwind]
-        S_Logic[Business Logic Expert]
-        S_Data[PDO Repository Master]
-        S_Integrator[Tier 1 Integrator]
-    end
-
-    %% Relations Workflows -> Skills
-    W_UI -->|Utilise| S_UI
-    W_Wire -->|Utilise| S_Data
-    W_Wire -->|Utilise| S_Logic
-    W_Wire -->|Utilise| S_Integrator
-
-    %% Relations Rules -> Workflows (Constraintes)
-    R2 -.->|Impose| W_Init
-    R4 -.->|Impose| W_Analyze
-    R1 -.->|Guide| AllWorkflows
-
-    style Rules fill:#f9f,stroke:#333,stroke-width:2px;
-    style Workflows fill:#bbf,stroke:#333,stroke-width:2px;
-    style Skills fill:#bfb,stroke:#333,stroke-width:2px;
-```
+[Voir le diagramme d'architecture (00_overview.mmd)](./00_overview.mmd)
 
 ## Observations de Cohérence
 
