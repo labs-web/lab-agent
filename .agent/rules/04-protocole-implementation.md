@@ -1,5 +1,11 @@
 # Protocole d'Implémentation et Workflows
 
+## 0. Déclenchement Automatique (OBLIGATOIRE)
+Dès qu'une demande concerne une **nouvelle fonctionnalité** (ex: "ajouter une page", "créer un formulaire", "liste des..."), l'agent DOIT :
+1. **Lire immédiatement** le fichier `.agent/workflows/processus-developpement.md`
+2. **Annoncer** à l'utilisateur : "Je lance le workflow `/processus-developpement`, Phase 1..."
+3. **Ne jamais** commencer à coder sans avoir passé par les 4 phases séquentielles.
+
 ## 1. Principe "UI-First"
 On ne code jamais le backend (Tier 2/3) avant d'avoir validé l'interface statique (Tier 1 / UI-Kit).
 
