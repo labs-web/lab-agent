@@ -1,0 +1,40 @@
+# Registre des Composants UI
+
+components:
+  # Layouts
+  - name: "LayoutPublic"
+    category: "Layouts"
+    path: "./layouts/LayoutPublic.html"
+    status: "pending"
+    description: "Structure globale des pages publiques (Header, Main, Footer)."
+    dependencies: ["Header", "Footer"]
+
+  # Molecules
+  - name: "Header"
+    category: "Molecules"
+    path: "./molecules/Header.html"
+    status: "pending"
+    description: "En-tête avec logo et navigation principale."
+    dependencies: []
+
+  - name: "Footer"
+    category: "Molecules"
+    path: "./molecules/Footer.html"
+    status: "pending"
+    description: "Pied de page avec copyright."
+    dependencies: []
+
+  - name: "ArticleCard"
+    category: "Molecules"
+    path: "./molecules/ArticleCard.html"
+    status: "pending"
+    description: "Carte d'aperçu d'un article (image, titre, résumé, date, lien)."
+    dependencies: []
+
+  # Pages
+  - name: "PageListeArticles"
+    category: "Pages"
+    path: "./pages/PageListeArticles.html"
+    status: "pending"
+    description: "Page publique affichant la liste des articles."
+    dependencies: ["LayoutPublic", "ArticleCard"]

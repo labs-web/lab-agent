@@ -25,6 +25,26 @@ Tu interviens dans le workflow `/conception-ui` (Étape 0).
 **Emplacement** : `ui-kit/charte-graphique/charte.md`
 **But** : Définir les fondations visuelles AVANT tout wireframe ou composant.
 
+---
+
+## Output : index.html (Démonstration)
+
+**Emplacement** : `ui-kit/charte-graphique/index.html`
+**But** : Fournir un exemple visuel interactif de la charte pour validation par le développeur.
+
+### Contenu obligatoire
+Le fichier index.html doit démontrer :
+1. **Palette de couleurs** : Affichage des swatches avec codes HEX
+2. **Typographie** : Exemples de H1, H2, H3, Body, Small
+3. **Boutons** : Variantes primary, secondary, accent
+4. **Cartes** : Exemple de composant avec ombre et bordure
+5. **Espacements** : Démonstration visuelle des tokens
+
+### Exigences techniques
+- Utiliser TailwindCSS via CDN
+- Inclure la police Inter (Google Fonts)
+- Page responsive et autonome (pas de dépendances externes)
+
 ### Format du fichier charte.md
 ```markdown
 # Charte Graphique
