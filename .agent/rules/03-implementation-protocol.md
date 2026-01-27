@@ -2,7 +2,7 @@
 trigger: always_on
 ---
 
-# Protocole Méthodologique et Pédagogie
+# Protocole d'Implémentation et Méthodologie
 
 ## 1. Cycle de Développement "UI-First" (Ordre Immuable)
 Pour toute nouvelle fonctionnalité, l'agent doit OBLIGATOIREMENT suivre cet ordre strict et identifier les Skills/Workflows appropriés :
@@ -12,7 +12,8 @@ Pour toute nouvelle fonctionnalité, l'agent doit OBLIGATOIREMENT suivre cet ord
 - **Objectif** : Détecter les composants nécessaires (Boutons, Cards, Inputs...) et valider leur existence.
 - **Règle d'Or** : **Toujours consulter `ui-kit/components-manifest.yaml`** avant toute création.
 - **Maintenance** : Toute création de composant doit être enregistrée dans ce manifeste.
-- **Livrable** : Plan d'action et mise à jour du statut des composants dans le manifeste.
+- **Livrable** : Liste des composants identifiés à créer (Proposition).
+- **STOP OBLIGATOIRE** : L'agent **DOIT ATTENDRE** la validation explicite de la liste des composants par le développeur avant de mettre à jour le manifeste ou de créer les fichiers physiques.
 - **Skill Requis** : `ui-designer-tailwind` (Mode Analyse).
 
 ### PHASE 2 : Prototypage Statique (UI-Kit)
@@ -20,6 +21,7 @@ Création des composants HTML/Tailwind isolés avec données "Mocks".
 - **Lieu** : Uniquement dans le dossier `ui-kit/`.
 - **Interdiction** : Aucune logique PHP ni dépendance backend à ce stade.
 - **Skill Requis** : `ui-designer-tailwind`.
+- **STOP OBLIGATOIRE** : L'agent **DOIT ATTENDRE** la validation visuelle du développeur sur les fichiers statiques avant de passer à l'intégration Backend.
 
 ### PHASE 3 : Intégration & Logique (Architecture 3-Tiers)
 Câblage final entre le Controller, le Service et le Model une fois le design validé.
