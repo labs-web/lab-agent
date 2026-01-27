@@ -2,22 +2,35 @@
 
 declare(strict_types=1);
 
-use App\Controllers\HomeController;
-
-// Chargement de l'autoloader
+// Chargement de l'autoloader PSR-4
 require_once __DIR__ . '/../autoload.php';
 
-// Gestion basique des erreurs pour le développement
-ini_set('display_errors', '1');
-ini_set('display_startup_errors', '1');
-error_reporting(E_ALL);
+use App\Controllers\Public\ArticleController;
 
-// Routeur très basique (Placeholder)
-// Dans une vraie app, on analyserait $_SERVER['REQUEST_URI']
+// Récupération de l'URI demandée
+$requestUri = parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH);
 
-echo "<h1>Bienvenue sur l'architecture 3-Tiers (PHP Vanilla)</h1>";
-echo "<p>L'environnement est correctement initialisé.</p>";
+try {
+    // Routeur basique (Switch-Case)
+    switch ($requestUri) {
+        case '/':
+        case '/index.php':
+        case '/articles':
+            // Route par défaut : Liste des articles
+            (new ArticleController())->index();
+            break;
 
-// Exemple d'utilisation future :
-// $controller = new HomeController();
-// $controller->index();
+        default:
+            // Gestion erreur 404
+            http_response_code(404);
+            echo "<h1>404 - Page non trouvée</h1>";
+            echo "<p>La ressource demandée n'existe pas.</p>";
+            echo "<a href='/'>Retour à l'accueil</a>";
+            break;
+    }
+} catch (Throwable $e) {
+    // Gestion globale des erreurs (500)
+    http_response_code(500);
+    echo "<h1>Erreur Serveur</h1>";
+    echo "<p>" . htmlspecialchars($e->getMessage()) . "</p>";
+}

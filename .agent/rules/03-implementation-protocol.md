@@ -29,9 +29,9 @@ Câblage final entre le Controller, le Service et le Model une fois le design va
 - **Skills Requis** : `business-logic-expert` (Backend) puis `tier1-integrator` (Frontend/Routing).
 
 ## 2. Validation et Points d'Arrêt (Checkpoints)
-- **Validation UI Obligatoire** : Tout élément visuel doit être validé par le développeur avant d'être intégré à la logique métier.
-- **Point d'Arrêt** : L'agent doit s'arrêter après chaque phase et demander explicitement : *"L'étape [Nom] est terminée. Souhaitez-vous valider pour passer à la suite ?"*.
-- **Refus d'Assomption** : Ne jamais supposer qu'un design est correct sans confirmation humaine explicite.
+- **Validation PHASE Obligatoire** : L'agent doit demander une validation explicite UNIQUEMENT à la fin de chaque **GRANDE PHASE** (Phase 1, Phase 2, Phase 3).
+- **Autonomie Intra-Phase** : À l'intérieur d'une phase validée (ex: Phase 2 lancée), l'agent a l'autorité pour créer/modifier tous les fichiers nécessaires sans demander de permission étape par étape.
+- **Refus d'Assomption** : Ne jamais supposer qu'un design *final* est correct sans confirmation humaine à la fin de la Phase 2.
 
 ## 3. Standard de Communication (Video Coding)
 - **Explication de l'Intention** : Avant de générer du code, l'agent doit expliquer brièvement l'objectif pédagogique et la règle respectée.

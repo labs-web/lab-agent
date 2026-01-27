@@ -8,11 +8,31 @@ meta:
   version: 1.0.0
   description: "Registre centralisé des composants UI"
 
-components: []
-  # Template d'entrée :
-  # - name: "NomDuComposant"       # PascalCase (ex: ArticleCard)
-  #   category: "Category"         # Atoms, Molecules, Organisms, Layouts
-  #   path: "./path/to/file.html"  # Chemin relatif depuis ui-kit/
-  #   status: "draft"              # draft, pending_review, validated
-  #   description: "Description courte de l'usage."
-  #   dependencies: []             # Liste des noms de composants dépendants
+components:
+  - name: "PublicMenu"
+    category: "Molecules"
+    path: "./molecules/PublicMenu.html"
+    status: "validated"
+    description: "Barre de navigation principale pour le site public."
+    dependencies: []
+
+  - name: "ArticleCard"
+    category: "Molecules"
+    path: "./molecules/ArticleCard.html"
+    status: "validated"
+    description: "Carte affichant le résumé d'un article (image, titre, extrait)."
+    dependencies: []
+
+  - name: "PublicLayout"
+    category: "Layouts"
+    path: "./layouts/PublicLayout.html"
+    status: "validated"
+    description: "Layout de structure globale (Header + Main + Grille Articles + Footer)."
+    dependencies: ["PublicMenu"]
+
+  - name: "ArticleListPage"
+    category: "Pages"
+    path: "./pages/ArticleListPage.html"
+    status: "validated"
+    description: "Page complète listant les articles."
+    dependencies: ["PublicLayout", "ArticleCard"]
