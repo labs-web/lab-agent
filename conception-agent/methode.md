@@ -11,22 +11,22 @@ Un agent n'est pas un prompt unique. C'est un système composé de :
 
 ---
 
-## Phase 1 : Atomisation des Skills (Capacités)
-Ne demandez pas à l'agent de "tout savoir". Créez des spécialistes.
-
-*   **Principe** : Un Skill = Une Expertise Technique isolée.
-*   **Action** : Créez un dossier par compétence (ex: `sql-expert`, `tailwind-designer`).
-*   **Question de conception** : *"Si je devais embaucher un freelance juste pour cette micro-tâche, quel serait son titre ?"*
-
-## Phase 2 : Scénarisation des Workflows (Orchestration)
+## Phase 1 : Scénarisation des Workflows (Orchestration)
 Ne laissez pas l'agent improviser le plan. Donnez-lui la carte.
 
 *   **Principe** : Un Workflow = Une Recette de Cuisine étape par étape.
 *   **Structure** :
     *   **Trigger** : Quand utiliser ce workflow ?
-    *   **Steps** : Liste séquentielle. Chaque étape doit invoquer un **Skill**.
+    *   **Steps** : Liste séquentielle. Chaque étape identifie un **besoin de Skill**.
     *   **Checkpoints** : Moments de validation humaine obligatoire.
-*   **Question de conception** : *"Quel est le chemin critique pour livrer cette fonctionnalité sans erreur ?"*
+*   **Question de conception** : *"Quel est le chemin critique pour livrer cette fonctionnalité, et de quels experts j'ai besoin à chaque étape ?"*
+
+## Phase 2 : Atomisation des Skills (Capacités)
+Une fois les besoins identifiés par les workflows, créez les spécialistes pour y répondre.
+
+*   **Principe** : Un Skill = Une Expertise Technique isolée répondant à une étape de Workflow.
+*   **Action** : Créez un dossier par compétence (ex: `sql-expert`, `tailwind-designer`).
+*   **Question de conception** : *"Si je devais embaucher un freelance juste pour réaliser l'étape 3 du workflow, quel serait son titre ?"*
 
 ## Phase 3 : Constitution des Rules (Garde-Fous)
 Ne répétez pas les consignes de sécurité dans chaque tâche. Faites-en des lois.

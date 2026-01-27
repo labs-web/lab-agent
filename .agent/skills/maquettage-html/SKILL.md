@@ -1,9 +1,9 @@
 ---
-name: ui-designer-tailwind
-description: Expert en intégration HTML5 et Tailwind CSS pur. Spécialisé dans la création de maquettes statiques et de composants isolés dans le dossier /ui-kit.
+name: maquettage-html
+description: Responsable de la création de l'interface statique (HTML/CSS). Crée des maquettes visuelles autonomes pour validation avant tout développement backend.
 ---
 
-# Expertise : UI Design & Maquettage Statique (Tailwind)
+# Expertise : Maquettage HTML & UI Design (Statique)
 
 Ce skill est activé durant la **Phase 2 (Maquettage)** du cycle de développement. L'objectif est de produire des références visuelles robustes avant toute intégration logique.
 

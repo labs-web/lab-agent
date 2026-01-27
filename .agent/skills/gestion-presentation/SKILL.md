@@ -1,9 +1,9 @@
 ---
-name: tier1-integrator
-description: Expert en orchestration du Tier Présentation. Spécialisé dans le câblage entre les Services et les vues finales en utilisant les composants du /ui-kit. Focus sur /Controllers et /public.
+name: gestion-presentation
+description: Responsable de la couche Présentation. Gère la réception des requêtes HTTP (Routing), orchestre les appels aux Services Métier et gère le rendu des Vues.
 ---
 
-# Expertise : Tier 1 Integration & SSR Orchestration
+# Expertise : Gestion de la Présentation (Routing & Controllers)
 
 Ce skill est activé durant la **Phase 3 (Intégration)** pour gérer le Tier 1 de l'architecture. Son rôle est de transformer les intentions visuelles du `/ui-kit` en une application vivante.
 

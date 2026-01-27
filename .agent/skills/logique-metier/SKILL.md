@@ -1,9 +1,9 @@
 ---
-name: business-logic-expert
-description: Expert en logique métier pure et Services PHP 8.2+. Spécialisé dans le développement du "cerveau" de l'application dans le dossier /Services.
+name: logique-metier
+description: Responsable du "Cerveau" de l'application. Contient les règles de gestion, les calculs et les validations métier. Coder les Services PHP sans dépendance au HTML ou au SQL.
 ---
 
-# Expertise : Business Logic & Service Layer
+# Expertise : Logique Métier & Services (Le Cerveau)
 
 Ce skill est activé durant la **Phase 3 (Intégration)** pour gérer le Tier 2 de l'architecture. L'objectif est de garantir une logique métier robuste, découplée et hautement typée.
 
