@@ -10,10 +10,10 @@ Ce document formalise la reconstruction complète de l'agent selon la méthodolo
 ### 1. Workflow Maître `/processus-developpement` (Orchestrateur)
 **Description** : Le workflow standard pour toute création de fonctionnalité. Il appelle les experts tour à tour.
 **Trigger** : Demande explicite de nouvelle fonctionnalité.
-*   **Étape 1 (Conception UI)** : Lancer `/conception-ui`. (Wireframes, UX, User Stories).
-*   **Étape 2 (Maquettage)** : Lancer `/creation-ui`. (Composants, Assemblage Statique).
-*   **Étape 3 (Conception Technique)** : Lancer `/conception-technique`. (BDD, Classes, Plan).
-*   **Étape 4 (Implémentation)** : Lancer `/implementation`. (Code Backend, Intégration).
+*   **Phase 1 (Conception UI)** : Lancer `/conception-ui`. (Wireframes, UX, User Stories).
+*   **Phase 2 (Maquettage)** : Lancer `/creation-ui`. (Composants, Assemblage Statique).
+*   **Phase 3 (Conception Technique)** : Lancer `/conception-technique`. (BDD, Classes, Plan).
+*   **Phase 4 (Implémentation)** : Lancer `/implementation`. (Code Backend, Intégration).
 
 ---
 
@@ -51,6 +51,9 @@ Ce document formalise la reconstruction complète de l'agent selon la méthodolo
 *   **Checkpoint** : Test fonctionnel final.
 
 ---
+
+## Phase 2 : Atomisation des Compétences (Les Spécialistes)
+*Les noms des "Skills" sont désormais francisés pour une cohérence totale.*
 
 *   **`architecte-agent`** : Expert de la structure `.agent`. Sait lire, créer et modifier règles/skills/workflows. (Usage : `/evolution-agent`).
 *   **`concepteur-technique`** : Architecte logiciel. Connaît par cœur le pattern 3-Tiers (Usage : `/conception-technique`).
