@@ -1,0 +1,38 @@
+sequenceDiagram
+    autonumber
+    
+    participant U as Utilisateur
+    participant A as Agent (Consultant)
+    participant M as Manifeste UI (YamL)
+
+    Note over A: Mode Consultant Senior
+
+    U->>A: Demande Fonctionnalité
+    
+    rect rgb(249, 250, 251)
+        Note left of A: Étape 1 : Extraction Besoins
+        A->>A: Identifier Actions & Données
+        A->>A: Vérifier Contraintes Métier
+    end
+
+    rect rgb(239, 246, 255)
+        Note left of A: Étape 2 : Décomposition UI
+        A->>M: Lire components-manifest.yaml
+        M-->>A: Liste composants existants
+        A->>A: Identifier Atomes/Molécules manquants
+        A->>A: Définir États Visuels
+    end
+
+    rect rgb(240, 253, 244)
+        Note left of A: Étape 3 : Resp. 3-Tiers
+        A->>A: Planifier Tier 3 (Tables/PDO)
+        A->>A: Planifier Tier 2 (Services/Exceptions)
+        A->>A: Planifier Tier 1 (Controllers/Routes)
+    end
+
+    rect rgb(254, 242, 242)
+        Note left of A: Étape 4 : Validation
+        A->>U: Présenter Plan (Tableau/Liste)
+        Note right of A: INTERDICTION Code Source
+        U->>A: Valider Plan
+    end
