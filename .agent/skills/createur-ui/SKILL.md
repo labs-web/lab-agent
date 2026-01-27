@@ -14,7 +14,9 @@ Tu interviens dans le workflow `/creation-ui`.
 2.  **Créer le Composant HTML** : Coder l'élément dans `ui-kit/[category]/[Nom].html`.
 3.  **Utiliser Tailwind CSS** : Exclusivement via les classes utilitaires. Pas de CSS custom.
 4.  **Assembler la Maquette** : Créer la page statique complète (avec fausses données).
-5.  **Mettre à jour le Manifeste** : Changer le status de `pending` à `validated`.
+5.  **Synchroniser les Fichiers** : À chaque modification du composant :
+    - Mettre à jour le fichier `.spec.md` (ajout de notes, modifications de structure).
+    - Mettre à jour `components-manifest.yaml` (status, description, dépendances).
 
 ## Inputs
 - **Fichier `.spec.md`** : Description textuelle du composant (structure, éléments, données).
@@ -22,14 +24,15 @@ Tu interviens dans le workflow `/creation-ui`.
 
 ## Outputs
 - **Fichier `.html`** : Code HTML pur avec classes Tailwind.
-- **Manifeste mis à jour** : Status `validated`.
+- **Fichier `.spec.md` mis à jour** : Ajout des notes de réalisation, modifications.
+- **Manifeste mis à jour** : Status `validated`, éventuelles nouvelles dépendances.
+
+## Règle de Synchronisation
+**À CHAQUE modification d'un composant HTML**, tu DOIS :
+1.  Mettre à jour le `.spec.md` correspondant (documenter les changements).
+2.  Mettre à jour le `components-manifest.yaml` si nécessaire.
 
 ## Interdictions
-- **Pas de PHP logique** : Code statique uniquement (pas de boucles dynamiques).
+- **Pas de PHP logique** : Code statique uniquement.
 - **Pas de JS Framework** : Vanilla JS minimal si nécessaire.
 - **Pas de CSS custom** : Tailwind classes only.
-
-## Exemple de Workflow
-1.  Lire `ui-kit/molecules/ArticleCard.spec.md`.
-2.  Créer `ui-kit/molecules/ArticleCard.html` avec le code HTML/Tailwind.
-3.  Mettre à jour `components-manifest.yaml` : status = `validated`.
