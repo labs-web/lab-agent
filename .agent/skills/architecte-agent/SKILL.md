@@ -96,6 +96,35 @@ Demander la validation à l'utilisateur avant de continuer.
 
 ---
 
+## Conventions de Nommage
+
+### Skills
+| Élément       | Convention            | Exemple                      |
+| ------------- | --------------------- | ---------------------------- |
+| Dossier       | `kebab-case`          | `graphiste-charte/`          |
+| Fichier       | `SKILL.md` (fixe)     | `SKILL.md`                   |
+| `name` (YAML) | `kebab-case`          | `graphiste-charte`           |
+| Titre         | `Skill : Nom Lisible` | `# Skill : Graphiste Charte` |
+
+**Règle** : Le nom doit décrire le **rôle** (ex: `concepteur-ui`, `developpeur-php`).
+
+### Workflows
+| Élément        | Convention               | Exemple                         |
+| -------------- | ------------------------ | ------------------------------- |
+| Fichier        | `kebab-case.md`          | `charte-graphique.md`           |
+| Commande slash | `/kebab-case`            | `/charte-graphique`             |
+| Titre          | `Workflow : Nom Lisible` | `# Workflow : Charte Graphique` |
+
+**Règle** : Le nom doit décrire l'**action** ou le **processus** (ex: `conception-ui`, `implementation`).
+
+### Rules
+| Élément | Convention                 | Exemple                     |
+| ------- | -------------------------- | --------------------------- |
+| Fichier | `XX-kebab-case.md`         | `01-architecture-3tiers.md` |
+| Préfixe | Numéro d'ordre (01, 02...) | `01-`, `02-`                |
+
+---
+
 ## Règles de Cohérence Systémique
 1.  **Un Workflow doit référencer des Skills existants.**
 2.  **Une Rule ne doit pas contredire une autre Rule.**

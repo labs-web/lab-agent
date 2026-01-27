@@ -11,13 +11,13 @@ Appelé par `/processus-developpement` (Étape 1).
 
 ## Étapes
 
-### Étape 0 : Charte Graphique (Prérequis)
-- **Skill** : `concepteur-ui`
-- **Action** : Vérifier si `ui-kit/charte-graphique/charte.md` existe.
-    - **Si NON** : Créer la charte graphique (couleurs, typographie, espacements).
-    - **Si OUI** : Utiliser la charte existante.
-- **Output** : Fichier `ui-kit/charte-graphique/charte.md` validé.
-- **CHECKPOINT** : Demander la validation de la charte avant de continuer.
+### Étape 0 : Charte Graphique (Prérequis OBLIGATOIRE)
+- **Workflow** : `/charte-graphique`
+- **Skill** : `graphiste-charte`
+- **Action** : Lancer le workflow `/charte-graphique`.
+- **CHECKPOINT** : 
+    - Attendre la validation de la charte par l'utilisateur.
+    - ⛔ **INTERDICTION** : Ne pas passer à l'étape 1 sans "GO" explicite.
 
 ### Étape 1 : Identification des Besoins
 - **Skill** : `concepteur-ui`
