@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hero - Preview</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: {
+                        indigo: { 600: '#4F46E5', 800: '#3730A3' },
+                        slate: { 50: '#F8FAFC', 500: '#64748B', 900: '#0F172A' }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-slate-50 font-sans p-8">
+
+    <!-- Component: Hero -->
+    <section class="relative overflow-hidden py-16 bg-white rounded-3xl shadow-sm border border-slate-100">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center relative z-10">
+            <span class="inline-block py-1 px-3 rounded-full bg-indigo-50 text-indigo-600 text-sm font-semibold mb-6">
+                Développeur Laravel Senior
+            </span>
+            <h1 class="text-4xl md:text-6xl font-bold tracking-tight mb-6 text-slate-900">
+                Construisons des applications <br>
+                <span class="text-indigo-600">Robustes & Scalables</span>
+            </h1>
+            <p class="text-lg text-slate-500 mb-10 max-w-2xl mx-auto">
+                Spécialisé dans la création d'architectures complexes et performantes.
+                Focus sur la qualité de code et l'expérience utilisateur.
+            </p>
+            <div class="flex gap-4 justify-center">
+                <a href="#"
+                    class="bg-indigo-600 text-white px-8 py-3 rounded-xl font-medium hover:bg-indigo-800 transition-all shadow-lg shadow-indigo-200 hover:shadow-indigo-300">
+                    Voir mes projets
+                </a>
+                <a href="#"
+                    class="bg-white text-slate-900 border border-slate-200 px-8 py-3 rounded-xl font-medium hover:bg-slate-50 transition-colors">
+                    Me contacter
+                </a>
+            </div>
+        </div>
+
+        <!-- Decoration -->
+        <div
+            class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-indigo-50 rounded-full blur-3xl opacity-50 -z-10 pointer-events-none">
+        </div>
+    </section>
+
+</body>
+
+</html>

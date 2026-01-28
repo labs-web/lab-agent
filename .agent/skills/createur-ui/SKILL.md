@@ -70,30 +70,27 @@ Chaque fichier `.html` DOIT être une **page HTML complète et fonctionnelle** q
 
 ---
 
-## Exigences UI/UX (OBLIGATOIRE)
+## Exigences UI/UX (CRITIQUE)
 
-Les maquettes doivent **impressionner visuellement** et offrir une **expérience utilisateur premium**.
+Les composants doivent être "Vivants" et "Premium". Le simple fonctionnel ne suffit pas.
 
-### Design Visuel
-- **Esthétique moderne** : Éviter les designs plats/basiques. Utiliser gradients, ombres, bordures subtiles.
-- **Palette harmonieuse** : Respecter strictement la charte graphique.
-- **Typographie soignée** : Hiérarchie claire (H1 > H2 > H3), espacement généreux.
-- **Espacement aéré** : Utiliser les tokens d'espacement (p-4, p-6, p-8). Jamais trop compact.
+### 1. "More UI" (Esthétique)
+- **Glassmorphism** : Utiliser `backdrop-blur` et `bg-white/80` pour les surfaces superposées.
+- **Micro-Ombres** : Ne jamais utiliser de bordures noires simples. Préférer `ring-1 ring-slate-900/5` + `shadow-sm`.
+- **Gradients Subtils** : Ajouter de légers dégradés sur les boutons ou les arrière-plans pour la profondeur.
 
-### Expérience Utilisateur
-- **Micro-interactions** : Tous les éléments interactifs doivent avoir des effets hover/focus (transition, shadow, couleur).
-- **Feedback visuel** : L'utilisateur doit savoir où il peut cliquer.
-- **Responsive** : Tester mobile, tablette, desktop. Utiliser les breakpoints Tailwind (sm:, md:, lg:).
-- **Accessibilité** : Contraste suffisant, focus visible, alt sur images.
+### 2. "More UX" (Ressenti)
+- **State Feedback** :
+    - `hover:` : Changement de couleur, léger lift (`-translate-y-0.5`), ombre accentuée.
+    - `active:` : Effet de pression (`scale-95`).
+    - `focus-visible:` : Ring coloré pour l'accessibilité navigation clavier.
+- **Curseur** : `cursor-pointer` sur TOUT ce qui est cliquable.
+- **Transitions** : Toujours ajouter `transition-all duration-200 ease-in-out` sur les éléments interactifs.
 
-### Checklist Qualité UI
-Avant de valider un composant, vérifier :
-- [ ] Effet hover sur tous les éléments cliquables
-- [ ] Transitions smooth (transition, duration-200)
-- [ ] Ombres appropriées (shadow, shadow-md, shadow-lg)
-- [ ] Bordures arrondies cohérentes (rounded-md, rounded-lg)
-- [ ] Espacement suffisant (minimum p-4 pour les conteneurs)
-- [ ] Responsive sur 3 tailles d'écran
+### Checklist "Wahoo Effect"
+Avant de livrer, demande-toi :
+- "Est-ce que ça ressemble à un template à 10$ ou à une app SaaS moderne ?"
+- "Est-ce qu'on a envie de cliquer ?"
 
 ---
 

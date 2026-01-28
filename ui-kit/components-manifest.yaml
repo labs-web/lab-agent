@@ -2,7 +2,7 @@ components:
   - name: "Hero"
     category: "Layouts"
     path: "./ui-kit/layouts/Hero.html"
-    status: "pending"
+    status: "validated"
     description: "Section d'introduction avec titre, sous-titre et boutons d'action."
     dependencies: []
     specs:
@@ -18,7 +18,7 @@ components:
   - name: "ProjectCard"
     category: "Molecules"
     path: "./ui-kit/molecules/ProjectCard.html"
-    status: "pending"
+    status: "validated"
     description: "Carte affichant un projet avec image, titre, description et tags."
     dependencies: []
     specs:
@@ -35,7 +35,7 @@ components:
   - name: "SkillBadge"
     category: "Atoms"
     path: "./ui-kit/atoms/SkillBadge.html"
-    status: "pending"
+    status: "validated"
     description: "Badge simple pour afficher une compétence."
     dependencies: []
     specs:
@@ -48,7 +48,7 @@ components:
   - name: "ContactForm"
     category: "Molecules"
     path: "./ui-kit/molecules/ContactForm.html"
-    status: "pending"
+    status: "validated"
     description: "Formulaire de contact visuel."
     dependencies: []
     specs:
