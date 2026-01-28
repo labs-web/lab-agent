@@ -1,4 +1,28 @@
 components:
+  - name: "MainLayout"
+    category: "Layouts"
+    path: "./ui-kit/layouts/MainLayout.html"
+    status: "pending"
+    description: "Structure globale (Header + Footer + Bg)."
+    dependencies: ["Navbar"]
+    specs:
+      visual: "Background gris clair (slate-50), Navbar sticky, Footer simple."
+      elements: ["Navbar Component", "Slot Content", "Footer"]
+      data: {}
+      notes: "Doit servir de conteneur pour les autres composants."
+
+  - name: "ProjectLayout"
+    category: "Layouts"
+    path: "./ui-kit/layouts/ProjectLayout.html"
+    status: "pending"
+    description: "Layout spécifique pour la grille de projets."
+    dependencies: ["MainLayout", "ProjectCard"]
+    specs:
+      visual: "Hérite de MainLayout. Grille CSS 3 colonnes."
+      elements: ["MainLayout", "Project Grid"]
+      data: {}
+      notes: "Démo de la grille responsive."
+
   - name: "Hero"
     category: "Layouts"
     path: "./ui-kit/layouts/Hero.html"

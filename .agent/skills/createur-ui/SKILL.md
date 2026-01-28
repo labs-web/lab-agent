@@ -56,7 +56,8 @@ Chaque fichier `.html` DOIT être une **page HTML complète et fonctionnelle** q
 - **CDN obligatoire** : Tailwind + Google Fonts
 - **Données mockées** : Utiliser de fausses données réalistes
 - **Aucune dépendance locale** : Le fichier doit fonctionner seul
-- **UN SEUL composant par fichier** : Chaque fichier `.html` affiche UN SEUL exemplaire du composant (pas de grille, pas de multiples instances)
+- **UN SEUL composant par fichier** : Chaque fichier `.html` affiche UN SEUL exemplaire du composant.
+- **Autorité du Layout (IMPORTANT)** : Le composant ne doit PAS avoir de background défini (sauf si c'est intrinsèque à son design comme une carte). Il doit être conçu pour se poser sur le background du Layout Principal (`bg-slate-50` ou `bg-slate-900`). Le `<body>` du fichier preview peut avoir une classe background pour la démo, mais le composant lui-même doit être "transparent" ou adaptable.
 
 ## Règle de Synchronisation
 **À CHAQUE modification d'un composant HTML**, tu DOIS :

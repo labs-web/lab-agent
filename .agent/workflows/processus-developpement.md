@@ -20,10 +20,11 @@ Demande utilisateur : "Crée une landing page", "Ajoute une section features".
 3. Lancer le workflow `/conception-ui`.
 4. **STOP** : Attendre validation du concept.
 
-### Phase 2 : Création UI (Composants Atomiques)
-L'agent doit créer les briques unitaires avant d'assembler.
-5. Lancer le workflow `/creation-ui` (Skill `createur-ui` + `expert-tailwind`).
-6. **STOP** : Attendre validation des fichiers `.html` dans `ui-kit/`.
+### Phase 2 : Création UI (Templates & Composants)
+L'agent doit d'abord poser le décor avant les meubles.
+5. **Templates** : Créer les structures de page (`ui-kit/layouts/`).
+6. **Composants** : Créer les briques unitaires (`ui-kit/molecules/`).
+7. **STOP** : Attendre validation des fichiers `.html` dans `ui-kit/`.
 
 ### Phase 3 : Assemblage & Livraison (Finalisation)
 7. **Créer l'index** : Assembler les composants validés dans `index.html` (racine).

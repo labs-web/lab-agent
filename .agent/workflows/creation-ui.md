@@ -11,13 +11,19 @@ Validation de `/conception-ui`.
 
 ## Étapes
 
-### Étape 1 : Création des Composants
+### Étape 1 : Création des Templates de Page (Layouts)
+- **Skill** : `createur-ui`
+- **Action** : Créer la structure globale de la page (Header, Footer, Background vide).
+- **Technologie** : HTML5 + Tailwind CSS.
+- **Output** : Fichier `ui-kit/layouts/[NomLayout].html` définissant "l'ambiance".
+
+### Étape 2 : Création des Composants
 - **Skill** : `createur-ui`
 - **Action** : Coder les éléments réutilisables (Boutons, Cards, Inputs) dans `ui-kit/`.
 - **Technologie** : HTML5 + Tailwind CSS exclusivement.
 - **Output** : Fichiers HTML autonomes et prévisualisables.
 
-### Étape 2 : Assemblage de la Page
+### Étape 3 : Assemblage de la Page
 - **Skill** : `createur-ui`
 - **Action** : Créer la page complète statique (avec fausses données).
 - **Output** : Fichier HTML prévisualisable dans un navigateur.
