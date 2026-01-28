@@ -1,11 +1,5 @@
 # Documentation
 
-<!-- Clean et strcurer ce fichier de documentation, il ne faut pas parler d'une notions avant de le définire avant, par exemple, parler de prompt avant de définir ce qu'est un prompt, ou parler de Antigravity avant de définir ce qu'est Antigravity -->
-
-<!-- Assurer que on a pas de répidtion des information -->
-<!-- NE pas utiliser les tableau md -->
-<!-- Proposer une strcutre des partie de ce fichiers , une sauence logique qui facilite l'aprpentissage et la compréhension -->
-
 ## Objectif
 
 L'objectif de cette documentation est multiple :
@@ -17,161 +11,100 @@ L'objectif de cette documentation est multiple :
 
 
 
-## Qu'est-ce qu'un Prompt ?
+## 1. Contexte : Le "Prompt" et ses limites
 
-Un **Prompt** est l'instruction initiale envoyée au modèle de langage (LLM). C'est le point d'entrée qui contient la demande de l'utilisateur.
-Dans un développement classique, ce prompt doit tout contenir : le contexte, la tâche, le code existant, les règles de sécurité, le style de code, etc.
+### Qu'est-ce qu'un Prompt ?
+Un **Prompt** est l'instruction initiale envoyée au modèle de langage (LLM). C'est le point d'entrée qui contient la demande de l'utilisateur. Dans une approche classique, ce prompt doit être exhaustif : contexte, tâche, règles de sécurité, stack technique, etc.
 
-<!-- donner un exemple de prompt -->
+**Exemple de "Mega-Prompt" monolithique (Classique) :**
+> "Agis comme un expert Senior PHP. Crée une page de login. IMPORTANT : Utilise l'architecture Hexagonale, pas de logique dans le contrôleur, sécurise avec Argon2, utilise TailwindCSS v3.0, respecte PSR-12... [et 50 autres lignes de contraintes]"
 
-## Problématique :  Pourquoi diviser le Prompt en Rules, Skills et Workflows ?
+### La Problématique
+Pourquoi ne pas simplement utiliser ce type de prompt ?
+1.  **Dilution cognitive** : L'IA "oublie" souvent les règles noyées au milieu de centaines de lignes d'instructions.
+2.  **Conflits** : Difficile de prioriser entre "Fais vite" et "Fais sécurisé".
+3.  **Maintenance nulle** : Si on change de version de CSS, il faut réécrire tous ses prompts.
 
-Pourquoi ne pas simplement écrire un très long prompt (ou une longue liste de Rules) ?
+---
 
-1.  **Limitation Cognitive de l'IA** : Si on mélange "Interdictions" (Rules) et "Savoir-faire" (Skills) dans le même texte, l'IA a tendance à "diluer" les interdictions. Une règle noyée dans 200 lignes d'instructions techniques est souvent ignorée.
-2.  **Conflits de Responsabilité** : Si une règle dit "Fais du code sécurisé" et un Skill dit "Fais vite un prototype", l'IA ne sait pas qui écouter. En séparant les deux, Antigravity donne explicitement la priorité aux Rules (Lois) sur les Skills (Actions).
-3.  **Modularité** : On veut pouvoir changer de méthode de travail (Workflow) sans avoir à réécrire les lois fondamentales du projet (Rules).
+## 2. La Solution : Antigravity
 
-C'est pourquoi nous ne mettons pas tout dans les Rules.
-*   Les **Rules** sont passives et permanentes (Lois).
-*   Les **Skills** et **Workflows** sont actifs et temporaires (Actions).
+**Antigravity** est une architecture modulaire pour agents IA. Au lieu d'écrire un prompt unique, nous "éclatons" l'intelligence en trois composants distincts stockés dans le dossier `.agent/`.
 
+L'objectif est de passer d'un "Prompt Ingénierie" (rédactionnel) à une "Architecture Agentique" (structurelle).
 
-## Définition de Antigravity
+---
 
-<!-- Définition de Antigravity -->
+## 3. Les Composants Fondamentaux
 
-## Structure de l'agent avec Antigravity
+### A. Rules (Les Lois)
+Les **Rules** constituent le "Code Civil" de l'agent.
+*   **Nature** : Contraintes **passives** et permanentes. Elles ne disent pas "comment faire", mais "ce qu'il est interdit de faire".
+*   **Fonctionnement** : Elles agissent comme un garde-fou. Qu'on demande une petite correction ou une grosse fonctionnalité, la Règle est toujours active en arrière-plan.
+*   **Ce qu'on ne met PAS dans une Rule** :
+    *   Des instructions étape par étape (C'est un Workflow).
+    *   Des snippets de code ou des tutoriaux (C'est un Skill).
 
-L'agent avec Antigravity est composé de plusieurs composants.
+*Exemple :* "Interdiction absolue d'utiliser du SQL brut dans un Contrôleur."
 
-le dossier .agent contient :
-- le dossier rules 
-- le dossier skills
-- le dossier workflows
+### B. Skills (Les Compétences)
+Les **Skills** représentent le **savoir-faire technique**.
+*   **Nature** : Capacités **actives**. Un Skill est un "Expert Virtuel" que l'agent convoque au besoin.
+*   **Stratégie de découpage** : On définit généralement les Skills par **Domaine d'Expertise Technique** (Langage, Framework, Rôle) plutôt que par phase de projet.
+    *   *Bon découpage* : `expert-php`, `expert-tailwind`, `analyste-bdd`.
+    *   *Pourquoi ?* Car l'`expert-php` intervient aussi bien en phase d'implémentation qu'en phase de correction de bugs.
+*   **Contenu d'un Skill** :
+    *   Instructions techniques ("Best practices PHP 8.2").
+    *   Templates de code.
+    *   Documentation de référence (Cheat-sheets, patterns à reproduire).
 
+*Exemple :* Le Skill `createur-ui` sait transformer une maquette mentale en code HTML/Tailwind valide.
 
-## Définition de rules
+### C. Workflows (Les Procédures)
+Les **Workflows** sont les **plans d'action**.
+*   **Nature** : Séquences ordonnées. Ils orchestrent le travail.
+*   **Granularité** : Il existe deux niveaux de workflows :
+    1.  **Macro (Processus)** : Gère les grandes phases (ex: "Développer une nouvelle Feature" de A à Z).
+    2.  **Micro (Tâche)** : Gère une action précise (ex: "Refactoriser une classe").
+*   **Rôle** : Le Workflow est le chef d'orchestre. Il appelle le bon Skill au bon moment et demande validation.
 
-Les **Rules** (Règles) constituent le "Code Civil" de l'agent. Ce sont des directives qui définissent **ce que l'agent doit être** et les contraintes qu'il doit impérativement respecter.
+*Exemple :* `Implémentation` : 1. Analyser (Skill Architecte) -> 2. Coder (Skill Dev) -> 3. Tester (Skill QA).
 
-Elles s'activent automatiquement ou contextuellement (par exemple, si l'on touche à un fichier PHP, les règles PHP s'appliquent). Elles garantissent la qualité, la sécurité et l'homogénéité du code, quel que soit la tâche en cours.
+### Résumé des différences
 
-<!-- Expliquer contraintes passives et non passives -->
+*   **Rule** = Le Code de la Route (Ce qui est autorisé/interdit).
+*   **Skill** = Le Pilote (Celui qui sait conduire).
+*   **Workflow** = L'Itinéraire (Le chemin à suivre).
 
+---
 
+## 4. Fonctionnement d'Antigravity
 
-*Exemple :* "Interdiction absolue d'utiliser du SQL brut dans un Contrôleur", "Les variables doivent être nommées en camelCase".
+Comment l'agent utilise-t-il ces fichiers ?
 
-<!-- Indiquer les chose à ne pas écrire dans les rules en indisant sont emplacement : SKILL ou WORKFLOW -->
+1.  **Réception** : L'utilisateur envoie une commande courte : "Crée la page Login".
+2.  **Chargement** : Antigravity analyse la demande et charge :
+    *   Le **Workflow** correspondant (ex: Feature Creation).
+    *   Les **Skills** nécessaires (ex: UI, PHP).
+    *   Toutes les **Rules** applicables.
+3.  **Exécution** : L'agent suit les étapes du Workflow. À chaque étape, il utilise le savoir-faire du Skill, tout en vérifiant qu'il ne viole aucune Rule.
 
+---
 
+## 5. Cas Pratique : Le "Maquettage First"
 
-## Définition de skills
+Pour illustrer, voici comment on transforme une méthode de travail humaine en configuration Antigravity.
 
-Les **Skills** (Compétences) représentent le **savoir-faire technique** de l'agent. Chaque Skill est un "expert virtuel" spécialisé dans un domaine précis (UX, Backend, CSS, SQL, etc.).
+**La méthode humaine :**
+"On ne code jamais le PHP (Backend) tant que le HTML (Frontend) n'est pas validé visuellement."
 
-<!-- Donc on peut déterminer les skills en analysant le projet techniquement et détertminer les expert que nous avons besoin, pour chaque technique ( langage, framework, etc)  on peut déterminer un exemple : confirmer ou proposer une correction de cet constat, est ce que on construite les skiil par langage, framework, etc  ou par phase de développement (analyse, conception, implémentation, test, déploiement) -->
+**La traduction Antigravity :**
 
-<!-- Est ce que les skills sont la réponde technique des tâche technique à réaliser dans le projet ? -->
+1.  **Config Skills** : On crée un expert `createur-ui` (Frontend) et un expert `developpeur-php` (Backend).
+2.  **Config Workflow** : On écrit un script `/creation-page` qui :
+    *   Étape 1 : Appelle `createur-ui` pour faire le HTML.
+    *   Étape 2 : **STOP**. Demande validation utilisateur.
+    *   Étape 3 : Si validé, appelle `developpeur-php` pour la logique.
+3.  **Config Rule** : On ajoute une sécurité `no-backend-without-frontend` : "Interdit de modifier un fichier `.php` (Controller) si le fichier `.html.twig` correspondant n'existe pas."
 
-Un skill contient :
-- Des instructions détaillées sur "comment faire".
-- Des outils spécifiques (scripts, templates).
-- Une documentation de référence.
-
-<!-- Une documentation de référence. ?? c'est à dire dans SKILL on met des fichiers de documentation ? -->
-
-
-Contrairement aux rules qui sont des contraintes passives, les skills sont des capacités actives que l'agent "endosse" pour agir.
-
-*Exemple :* Le skill `createur-ui` sait comment convertir une maquette en HTML/Tailwind propre.
-
-
-## Définition de workflows
-
-Les **Workflows** (Processus) sont les **plans d'action** : ils définissent la méthode à suivre, étape par étape, pour accomplir un objectif macro.
-
-<!-- J'ai deux constat ici : Le workflow décrit les étape de notre processus de développement c'est à dire les pahses, ou un workflow définir les étape de réalisation d'une tâches , expliquer la bonne constat avec des exemples -->
-
-Ils orchestrent le travail en appelant les différents Skills au bon moment et en vérifiant que les Rules sont respectées. Ils assurent qu'aucun développeur ne saute une étape critique (comme la validation avant le déploiement).
-
-*Exemple :* Le workflow `/implementation` guide l'agent : 1. Analyser le besoin -> 2. Créer l'entité -> 3. Créer le Repository -> 4. Créer le Service.
-
-
-## Fonctionnement de antigravity
-
-<!-- Comment antigravity fonctionne : comment il lit les rules, skills et workflows -->
-
-<!-- Expliquer par un exemple -->
-
-## Prompt ingénierie
-
-Avant l'approche agentique structurée, le développeur devait maîtriser le "Prompt Engineering" monolithique. Pour obtenir un résultat correct, il fallait rédiger des prompts immenses et complexes à chaque requête.
-
-**Exemple de "Mega-Prompt" classique (sans Antigravity) :**
-```text
-Agis comme un expert Senior PHP/Symfony. 
-Je veux que tu crées une page de login. (Tâche)
-ATTENTION : (Contraintes)
-1. Utilise l'architecture Hexagonale.
-2. Pas de logicier métier dans le contrôleur.
-3. Sécurise les mots de passe avec Argon2.
-4. Utilise Tailwind pour le CSS (version 3.0).
-5. Respecte les conventions PSR-12.
-... (et encore 50 lignes de contexte projet) ...
-```
-**Problème :** C'est répétitif, instable (l'LLM "oublie" souvent une ligne au milieu) et difficile à maintenir.
-
-## Comment passer d'un prompt ingénierie à un agent antigravity ?
-
-Avec Antigravity, nous "éclatons" ce Mega-Prompt en composants modulaires, stockés dans le dossier `.agent`. Le prompt de l'utilisateur devient alors minimaliste.
-
-**Transformation :**
-1. **"Agis comme un expert PHP..."** -> Devient le Skill `developpeur-php`.
-2. **"ATTENTION : Architecture Hexagonale..."** -> Devient une Rule `architecture-hexagonal`.
-3. **"Tâche: Créer page login"** -> Devient l'objectif passé au Workflow.
-
-**Nouveau Prompt utilisateur :**
-> "Utilise le workflow Feature pour créer la page login."
-
-L'agent charge alors automatiquement les Skills et Rules nécessaires. C'est plus fiable, plus propre et réutilisable.
-
-
-## Différence entre Rules, Skills et Workflows
-
-| Composant    | Nature     | Question clé                               | Analogie                          |
-| ------------ | ---------- | ------------------------------------------ | --------------------------------- |
-| **Rule**     | Contrainte | *Qu'est-ce qui est interdit/obligatoire ?* | Le Code de la Route               |
-| **Skill**    | Compétence | *Comment réaliser cette tâche technique ?* | Le Métier (Menuisier, Architecte) |
-| **Workflow** | Procédure  | *Dans quel ordre enchaîner les étapes ?*   | La Recette de Cuisine             |
-
-
-## Exemple de processus de développement basé sur Maquettage first
-
-Dans ce laboratoire, nous suivons une approche "Maquettage First" stricte : on ne code pas le backend tant que l'interface n'est pas validée.
-
-**Le Processus Humain :**
-1. **Conception** : On dessine ce qu'on veut (Wireframe).
-2. **Design** : On établit l'apparence (Charte).
-3. **Intégration** : On code le HTML/CSS statique (Maquette).
-4. **Implémentation** : On ajoute le PHP/SQL pour rendre la page dynamique.
-
-Si on ne suit pas cet ordre, on risque de coder du PHP inutile pour une page qui va changer radicalement visuellement.
-
-## Comment, à partir d'un processus de développement basé sur Maquettage first, créer un agent antigravity ?
-
-Pour "agentifier" ce processus, nous créons des structures correspondantes dans Antigravity :
-
-1. **Les Skills spécialisés** : 
-   - `concepteur-ui` (Étape 1 & 2)
-   - `createur-ui` (Étape 3)
-   - `developpeur-php` (Étape 4)
-
-2. **Le Workflow Maître** :
-   - `/processus-developpement` : Un script qui appelle séquentiellement ces skills et demande une validation humaine entre chaque étape ("La maquette est-elle bonne ? Si oui, on passe au PHP").
-
-3. **Les Rules de garde-fou** :
-   - Une règle interdisant de modifier les contrôleurs PHP si la vue HTML correspondante n'existe pas encore.
-
-Ainsi, l'agent **force** le respect de la méthode de travail idéale.
+Ainsi, l'architecture force respectueusement le développeur à suivre la bonne méthode.
