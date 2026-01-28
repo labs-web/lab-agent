@@ -9,7 +9,17 @@ L'objectif de cette documentation est multiple :
 3. **Guide de Conception** : Expliquer aux développeurs la méthodologie pour concevoir et configurer leur propre agent.
 4. **Workflow de Développement** : Décrire comment utiliser l'agent pour développer des applications en suivant des processus spécialisés et optimisés.
 
-## Contexte : Le "Prompt" et ses limites
+## Anatomie d'une IA Agentique (Théorie Générale)
+
+Avant de parler d'Antigravity, il faut comprendre de quoi est composé un agent IA standard :
+
+1.  **Le Modèle (LLM)** : C'est le cerveau (ex: GPT-4, Claude 3.5). Il raisonne et génère du texte.
+2.  **La Mémoire (Contexte)** : C'est sa capacité à retenir l'information.
+    *   *System Prompt* : Sa personnalité de base.
+    *   *Context Window* : Sa mémoire de travail immédiate (limitée en taille).
+3.  **Les Outils (Tools)** : Ce sont ses bras. Le LLM ne peut que *parler*, mais avec des outils, il peut *agir* (lire un fichier, exécuter une commande).
+
+## 1. Contexte : Le "Prompt" et ses limites
 
 ### Qu'est-ce qu'un Prompt ?
 Un **Prompt** est l'instruction initiale envoyée au modèle de langage (LLM). C'est le point d'entrée qui contient la demande de l'utilisateur. Dans une approche classique, ce prompt doit être exhaustif : contexte, tâche, règles de sécurité, stack technique, etc.
