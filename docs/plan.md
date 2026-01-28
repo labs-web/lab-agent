@@ -2,6 +2,10 @@
 
 <!-- Clean et strcurer ce fichier de documentation, il ne faut pas parler d'une notions avant de le définire avant, par exemple, parler de prompt avant de définir ce qu'est un prompt, ou parler de Antigravity avant de définir ce qu'est Antigravity -->
 
+<!-- Assurer que on a pas de répidtion des information -->
+<!-- NE pas utiliser les tableau md -->
+<!-- Proposer une strcutre des partie de ce fichiers , une sauence logique qui facilite l'aprpentissage et la compréhension -->
+
 ## Objectif
 
 L'objectif de cette documentation est multiple :
@@ -87,6 +91,8 @@ Contrairement aux rules qui sont des contraintes passives, les skills sont des c
 ## Définition de workflows
 
 Les **Workflows** (Processus) sont les **plans d'action** : ils définissent la méthode à suivre, étape par étape, pour accomplir un objectif macro.
+
+<!-- J'ai deux constat ici : Le workflow décrit les étape de notre processus de développement c'est à dire les pahses, ou un workflow définir les étape de réalisation d'une tâches , expliquer la bonne constat avec des exemples -->
 
 Ils orchestrent le travail en appelant les différents Skills au bon moment et en vérifiant que les Rules sont respectées. Ils assurent qu'aucun développeur ne saute une étape critique (comme la validation avant le déploiement).
 
