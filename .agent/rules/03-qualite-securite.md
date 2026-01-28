@@ -1,22 +1,20 @@
-# Standards de Qualité Senior et Sécurité
+# Standards de Qualité Senior et Sécurité (Static & UI)
 
-## 1. Rigueur PHP 8.2+
-- **Typage Strict** : Chaque fichier PHP doit obligatoirement commencer par `declare(strict_types=1);`.
-- **Contrat de Type** : Tous les arguments, retours de fonctions et propriétés de classe doivent être explicitement typés.
-- **Modernité** : Utiliser systématiquement la **Constructor Property Promotion** et les propriétés **readonly** pour les objets de données (Entities/DTOs).
-- **Visibilité** : Ne jamais omettre la visibilité (`public`, `protected`, `private`).
+## 1. Clean Code HTML/CSS
+- **Atomicité** : Le code doit être découpé en composants clairs et indépendants.
+- **D.R.Y (Don't Repeat Yourself)** : Si un pattern se répète plus de 3 fois, il doit devenir un composant du UI-Kit.
+- **Naming CSS** : Aucune classe arbitraire. Utilisez le vocabulaire Tailwind.
 
-## 2. Clean Code et Lisibilité
-- **Naming Expressif** : Privilégier la clarté sur la brièveté (ex: `$articleRepository` au lieu de `$repo`).
-- **Méthodes Atomiques** : Une méthode ne doit accomplir qu'une seule tâche.
-- **Commentaires "Why"** : Documenter l'intention technique ou le choix architectural.
-- **Aération** : Séparer les blocs logiques par une ligne vide.
+## 2. Qualité Visuelle "Pixel Perfect"
+- **Alignement** : Vérifier que les marges et paddings sont cohérents (échelle de 4px).
+- **Contraste** : Le texte doit toujours être lisible (WCAG AA minimum).
+- **Responsive** : Pas de barre de défilement horizontale accidentelle. Utiliser `overflow-hidden` si nécessaire sur les conteneurs.
 
-## 3. Sécurité des Données (PDO)
-- **Requêtes Préparées** : Utilisation exclusive de `prepare()` et `execute()` avec PDO.
-- **Paramètres Nommés** : Privilégier les placeholders nommés (`:id`) aux points d'interrogation (`?`).
-- **Zéro SQL Dynamique** : Interdiction formelle de concaténer des variables utilisateur directement dans une chaîne SQL.
+## 3. Performance Web (Core Web Vitals)
+- **Images** : Toujours spécifier `width` et `height` pour éviter le Layout Shift (CLS).
+- **Polices** : Utiliser `font-display: swap` pour l'affichage immédiat du texte.
+- **Scripts** : Charger les scripts JS non-critiques avec `defer`.
 
-## 4. Sécurité Web et Rendu (XSS)
-- **Échappement Systématique** : Toute donnée affichée dans le HTML doit être passée par `htmlspecialchars()`.
-- **Validation des Entrées** : Valider et filtrer systématiquement les données issues de `$_POST` ou `$_GET`.
+## 4. Sécurité Front-End
+- **Liens Externes** : Tout lien `target="_blank"` doit avoir `rel="noopener noreferrer"`.
+- **Contenu Mixte** : Ne jamais charger de ressources HTTP sur une page HTTPS.

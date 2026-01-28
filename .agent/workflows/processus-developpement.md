@@ -1,35 +1,34 @@
 ---
-description: Workflow Maître pour le développement d'une nouvelle fonctionnalité (4 phases).
+description: Workflow Maître pour la création de site web statique en mode UI-First (Agile).
 ---
 
-# Workflow : Processus de Développement
+# Workflow : Processus de Développement (Static WebBuilder)
 
-Ce workflow orchestre l'ensemble du cycle de vie d'une fonctionnalité.
+Ce workflow orchestre le cycle de vie complet, de l'idée au déploiement.
 
 ## Trigger
-Demande explicite de nouvelle fonctionnalité (ex: "Ajouter une page de liste articles").
+Demande utilisateur : "Crée une landing page", "Ajoute une section features".
 
-## Phases Séquentielles (Avec Checkpoints)
+## Phases Séquentielles (Checkpoints Obligatoires)
 
-### Phase 0 : Charte Graphique (Prérequis)
+### Phase 0 : Charte Graphique (Fondations)
+*Condition : Uniquement si non définie.*
 1. Lancer le workflow `/charte-graphique`.
-2. **STOP** : Attendre la validation de la charte par l'utilisateur.
+2. **STOP** : Attendre validation visuelle de la charte.
 
-### Phase 1 : Conception UI
-3. Lancer le workflow `/conception-ui` (à partir de l'étape 1, charte déjà validée).
-4. **STOP** : Attendre la validation du concept visuel par l'utilisateur.
+### Phase 1 : Conception UI (Wireframe)
+3. Lancer le workflow `/conception-ui`.
+4. **STOP** : Attendre validation du concept.
 
-### Phase 2 : Création UI (Maquettage)
-5. Lancer le workflow `/creation-ui`.
-6. **STOP** : Attendre la validation des maquettes statiques par l'utilisateur.
+### Phase 2 : Création UI (Composants Atomiques)
+L'agent doit créer les briques unitaires avant d'assembler.
+5. Lancer le workflow `/creation-ui` (Skill `createur-ui` + `expert-tailwind`).
+6. **STOP** : Attendre validation des fichiers `.html` dans `ui-kit/`.
 
-### Phase 3 : Conception Technique
-7. Lancer le workflow `/conception-technique`.
-8. **STOP** : Attendre la validation du plan technique par l'utilisateur.
-
-### Phase 4 : Implémentation
-9. Lancer le workflow `/implementation`.
-10. **STOP** : Livrable final, demander la validation fonctionnelle.
+### Phase 3 : Assemblage & Livraison (Finalisation)
+7. **Créer l'index** : Assembler les composants validés dans `index.html` (racine).
+8. **Vérifier** : Responsive (Mobile/Desktop) et liens.
+9. **STOP** : Livrable final (Dossier prêt à déployer).
 
 ## Loi Checkpoint
-**INTERDICTION** de passer à la phase suivante sans "GO" explicite.
+**INTERDICTION** de passer à la phase suivante sans "GO" explicite de l'utilisateur.
