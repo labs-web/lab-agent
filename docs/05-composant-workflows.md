@@ -45,3 +45,38 @@ Si l'instruction contient plus d'un verbe d'action (ex: "Crée ET Teste"), c'est
 
 *Avant :* `Crée une page de login [instructions implicites de procéder par étapes]`
 *Après :* Workflow `/feature-login.md` (Étapes 1, 2, 3 explicites).
+
+---
+
+## Application au Tutoriel : L'Agent WebBuilder
+
+C'est ici que tout s'assemble. Nous allons créer le script qui force l'agent à travailler proprement.
+
+**Fichier à créer :** `.agent/workflows/creation-site-statique.md`
+
+```markdown
+# Workflow : Création Page Web (Mode UI-First)
+
+---
+description: Crée une page web en validant d'abord les composants graphiques.
+---
+
+## 1. Phase Micro-UI (Le Maquettage)
+L'agent doit d'abord lister les composants nécessaires.
+- **Action** : Analyser la demande (ex: "Page Accueil").
+- **Commande** : Créer les fichiers dans `ui-kit/` (ex: `button.html`, `navbar.html`).
+- **Validation** : Demander à l'utilisateur de valider visuellement ces fichiers.
+
+// STOP : Ne pas continuer tant que l'utilisateur n'a pas dit "C'est beau".
+
+## 2. Phase Assemblage (Le Montage)
+Une fois les briques validées, on construit la maison.
+- **Action** : Créer le fichier `index.html`.
+- **Contrainte** : Utiliser uniquement les composants du `ui-kit/` via des iframes ou du copier-coller intelligent.
+- **Action** : Lier le CSS (Tailwind).
+
+## 3. Phase Livraison
+- **Action** : Vérifier que tout est responsive.
+```
+
+Avec ce fichier, même si le modèle "a envie" de tout coder d'un coup, le framework Antigravity l'oblige à s'arrêter à l'étape 1. C'est la puissance du Workflow.

@@ -56,3 +56,26 @@ Chaque fois que vous avez envie de dire à l'IA "Qui elle est" ou "Quels outils 
 
 *Avant :* `Agis comme un expert Senior PHP... utilise TailwindCSS v3.0...`
 *Après :* Skill `expert-php` et Skill `expert-tailwind`.
+
+---
+
+## Application au Tutoriel : L'Agent WebBuilder
+
+Nous avons besoin de deux experts pour notre agence Web.
+
+**1. L'Architecte UI (`.agent/skills/createur-ui/SKILL.md`)**
+C'est lui qui transforme le besoin flou en code précis.
+*   *Instruction* : "Tu es un expert en design atomique. Tu ne produis que des fragments HTML."
+
+**2. L'Expert Technique (`.agent/skills/expert-tailwind/SKILL.md`)**
+C'est la documentation vivante.
+*   *Contenu* :
+    ```markdown
+    # Expert Tailwind 3.0
+    Voici les classes autorisées pour le projet :
+    - Couleurs : `bg-blue-500`, `text-slate-800` (Pas de couleurs arbitraires).
+    - Espacement : Échelle de 4px (`p-4`, `m-2`).
+    - Flexbox : Toujours préférer Flex à Grid pour les layouts simples.
+    ```
+
+Quand l'agent devra centrer une div, il lira ce Skill et saura qu'il doit utiliser `flex justify-center` et non `text-align: center`.

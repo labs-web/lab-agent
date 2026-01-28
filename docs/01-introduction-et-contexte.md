@@ -44,3 +44,18 @@ Pourquoi ne pas simplement utiliser ce type de prompt ?
 1.  **Dilution cognitive** : L'IA "oublie" souvent les règles noyées au milieu de centaines de lignes d'instructions.
 2.  **Conflits** : Difficile de prioriser entre "Fais vite" et "Fais sécurisé".
 3.  **Maintenance nulle** : Si on change de version de CSS, il faut réécrire tous ses prompts.
+
+---
+
+## 2. Objectif du Tutoriel : L'Agent "WebBuilder"
+
+Pour rendre cette documentation concrète, nous allons construire ensemble un exemple fil rouge tout au long des chapitres.
+
+**Notre Mission :**
+Configurer un agent Antigravity capable de coder des sites web statiques modernes.
+
+**La Contrainte Métier (Le Challenge) :**
+Nous voulons imposer une méthode de travail **"UI-First"**.
+> *"L'architecture force respectueusement le développeur à ne jamais toucher au code final tant que les composants graphiques (Boutons, Cards) ne sont pas validés."*
+
+Dans les fichiers suivants, repérez les encarts **"Application au Tutoriel"** pour voir comment configurer cet agent pas à pas.

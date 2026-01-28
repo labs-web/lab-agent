@@ -21,9 +21,14 @@ Comment l'agent utilise-t-il ces fichiers ?
 
 Comment Antigravity structure les concepts généraux de l'IA ?
 
-| Concept IA Général    | Implémentation Antigravity       | Rôle                                                                               |
-| --------------------- | -------------------------------- | ---------------------------------------------------------------------------------- |
-| **System Prompt**     | **Rules** (`rules/*.md`)         | Peuple la mémoire initiale avec les Lois.                                          |
-| **Logic / Knowledge** | **Skills** (`skills/*.md`)       | Active des blocs de savoir spécialisés à la demande.                               |
-| **Planning**          | **Workflows** (`workflows/*.md`) | Externalise le plan d'action dans un fichier fixe plutôt que dans la tête de l'IA. |
-| **Long-term Memory**  | **Le Projet** (Fichiers)         | L'agent utilise votre code source comme mémoire réelle.                            |
+*   **System Prompt** → correspond aux **Rules** (`rules/*.md`)
+    *   *Rôle* : Peuple la mémoire initiale avec les Lois.
+
+*   **Logic / Knowledge** → correspond aux **Skills** (`skills/*.md`)
+    *   *Rôle* : Active des blocs de savoir spécialisés à la demande.
+
+*   **Planning** → correspond aux **Workflows** (`workflows/*.md`)
+    *   *Rôle* : Externalise le plan d'action dans un fichier fixe plutôt que dans la tête de l'IA.
+
+*   **Long-term Memory** → correspond au **Projet** (Fichiers)
+    *   *Rôle* : L'agent utilise votre code source comme mémoire réelle.

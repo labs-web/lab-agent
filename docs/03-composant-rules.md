@@ -36,3 +36,25 @@ Quelle partie du "Mega-Prompt" classique devient une Rule ?
 
 *Avant :* `...IMPORTANT : Utilise l'architecture Hexagonale, pas de logique dans le contrôleur...`
 *Après :* Rule `architecture-hexagonal.md`.
+
+---
+
+## Application au Tutoriel : L'Agent WebBuilder
+
+Pour notre agent Web Statique, nous allons créer notre première loi.
+
+**Fichier à créer :** `.agent/rules/01-ui-first.md`
+
+```markdown
+# Loi UI-First
+
+## Principe
+L'interface utilisateur doit être atomique et validée AVANT d'être assemblée.
+
+## Interdictions
+1.  Il est **INTERDIT** de créer une page complète (`index.html`) si les composants nécessaires (boutons, cartes) n'existent pas dans le dossier `ui-kit/`.
+2.  Il est **INTERDIT** d'écrire du CSS dans le header HTML (`<style>`). Tout le style doit passer par les classes utilitaires (Tailwind).
+
+## Conséquence
+Si l'utilisateur demande "Fais-moi la Page d'Accueil", l'agent doit refuser et proposer : "Je dois d'abord créer les composants Header et Hero dans le UI-Kit".
+```
