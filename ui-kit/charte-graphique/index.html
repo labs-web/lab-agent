@@ -1,102 +1,272 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Validation Charte</title>
+    <title>Charte Graphique - Style Guide</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    },
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
                     colors: {
-                        indigo: {
-                            600: '#4F46E5',
-                            800: '#3730A3',
-                        },
-                        slate: {
-                            50: '#F8FAFC',
-                            200: '#E2E8F0',
-                            500: '#64748B',
-                            900: '#0F172A',
-                        },
-                        emerald: {
-                            500: '#10B981',
-                        }
+                        indigo: { 600: '#4F46E5', 800: '#3730A3' },
+                        slate: { 50: '#F8FAFC', 500: '#64748B', 900: '#0F172A' },
+                        emerald: { 500: '#10B981' }
                     }
                 }
             }
         }
     </script>
 </head>
-<body class="bg-slate-50 text-slate-900 font-sans antialiased">
 
-    <!-- Hero Section -->
-    <section class="min-h-screen flex items-center justify-center relative overflow-hidden">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center relative z-10">
-            <span class="inline-block py-1 px-3 rounded-full bg-indigo-50 text-indigo-600 text-sm font-semibold mb-6">
-                Développeur Laravel Senior
-            </span>
-            <h1 class="text-4xl md:text-6xl font-bold tracking-tight mb-6">
-                Construisons des applications <br>
-                <span class="text-indigo-600">Robustes & Scalables</span>
-            </h1>
-            <p class="text-lg text-slate-500 mb-10 max-w-2xl mx-auto">
-                Spécialisé dans la création d'architectures complexes et performantes. 
-                Focus sur la qualité de code et l'expérience utilisateur.
+<body class="bg-slate-50 font-sans text-slate-900 p-8 md:p-16">
+
+    <div class="max-w-7xl mx-auto space-y-24">
+
+        <!-- Header -->
+        <header class="text-center space-y-4">
+            <span
+                class="inline-block px-3 py-1 rounded-full bg-indigo-50 text-indigo-600 text-xs font-bold tracking-wide uppercase">Style
+                Guide</span>
+            <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight">Charte Graphique</h1>
+            <p class="text-slate-500 max-w-2xl mx-auto text-lg">
+                L'identité visuelle du Portfolio Développeur Laravel.
+                Une esthétique "Premium Tech" basée sur la clarté, la profondeur et l'interaction.
             </p>
-            <div class="flex gap-4 justify-center">
-                <a href="#" class="bg-indigo-600 text-white px-8 py-3 rounded-xl font-medium hover:bg-indigo-800 transition-colors shadow-lg shadow-indigo-200">
-                    Voir mes projets
-                </a>
-                <a href="#" class="bg-white text-slate-900 border border-slate-200 px-8 py-3 rounded-xl font-medium hover:bg-slate-50 transition-colors">
-                    Me contacter
-                </a>
-            </div>
-        </div>
-        
-        <!-- Abstract Background -->
-        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[1000px] bg-indigo-100 rounded-full blur-3xl opacity-30 -z-10 pointer-events-none"></div>
-    </section>
+        </header>
 
-    <!-- Components Showcase -->
-    <section class="py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <h2 class="text-3xl font-bold mb-12 text-center">Éléments de Design</h2>
-            
+        <!-- 1. Couleurs -->
+        <section id="colors">
+            <h2 class="text-2xl font-bold mb-8 flex items-center gap-3">
+                <span
+                    class="flex items-center justify-center w-8 h-8 rounded-lg bg-slate-900 text-white text-sm">1</span>
+                Palette de Couleurs
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Brand Colors -->
+                <div class="space-y-4">
+                    <h3 class="font-semibold text-slate-500 text-sm uppercase tracking-wider">Brand Primary</h3>
+                    <div class="space-y-3">
+                        <div
+                            class="h-24 rounded-2xl bg-indigo-600 shadow-lg shadow-indigo-200 flex items-center justify-center text-white font-mono text-sm">
+                            indigo-600 #4F46E5
+                        </div>
+                        <div
+                            class="h-16 rounded-2xl bg-indigo-800 flex items-center justify-center text-white/80 font-mono text-xs">
+                            indigo-800 #3730A3 (Hover)
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Accent Colors -->
+                <div class="space-y-4">
+                    <h3 class="font-semibold text-slate-500 text-sm uppercase tracking-wider">Accent</h3>
+                    <div class="space-y-3">
+                        <div
+                            class="h-24 rounded-2xl bg-emerald-500 shadow-lg shadow-emerald-100 flex items-center justify-center text-white font-mono text-sm">
+                            emerald-500 #10B981
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bases -->
+                <div class="space-y-4">
+                    <h3 class="font-semibold text-slate-500 text-sm uppercase tracking-wider">Base & Surface</h3>
+                    <div class="space-y-3">
+                        <div
+                            class="h-24 rounded-2xl bg-white border border-slate-200 shadow-sm flex items-center justify-center text-slate-500 font-mono text-sm">
+                            white #FFFFFF
+                        </div>
+                        <div
+                            class="h-16 rounded-2xl bg-slate-50 border border-slate-200 flex items-center justify-center text-slate-500 font-mono text-xs">
+                            slate-50 #F8FAFC
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Text -->
+                <div class="space-y-4">
+                    <h3 class="font-semibold text-slate-500 text-sm uppercase tracking-wider">Typography</h3>
+                    <div class="space-y-3">
+                        <div
+                            class="h-24 rounded-2xl bg-slate-900 flex items-center justify-center text-white font-mono text-sm">
+                            slate-900 (Headings)
+                        </div>
+                        <div
+                            class="h-16 rounded-2xl bg-slate-500 flex items-center justify-center text-white font-mono text-xs">
+                            slate-500 (Body)
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Typographie -->
+        <section id="typography">
+            <h2 class="text-2xl font-bold mb-8 flex items-center gap-3">
+                <span
+                    class="flex items-center justify-center w-8 h-8 rounded-lg bg-slate-900 text-white text-sm">2</span>
+                Typographie (Inter)
+            </h2>
+
+            <div class="bg-white rounded-3xl border border-slate-200 p-8 md:p-12 shadow-sm space-y-12">
+
+                <!-- Headings -->
+                <div class="grid md:grid-cols-12 gap-8 items-center border-b border-slate-100 pb-8">
+                    <div class="md:col-span-3 text-slate-400 font-mono text-sm">text-5xl font-extrabold</div>
+                    <div class="md:col-span-9">
+                        <h1 class="text-5xl font-extrabold text-slate-900 tracking-tight">Main Heading Display</h1>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-12 gap-8 items-center border-b border-slate-100 pb-8">
+                    <div class="md:col-span-3 text-slate-400 font-mono text-sm">text-3xl font-bold</div>
+                    <div class="md:col-span-9">
+                        <h2 class="text-3xl font-bold text-slate-900">Section Title Heading</h2>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-12 gap-8 items-center border-b border-slate-100 pb-8">
+                    <div class="md:col-span-3 text-slate-400 font-mono text-sm">text-xl font-bold</div>
+                    <div class="md:col-span-9">
+                        <h3 class="text-xl font-bold text-slate-900">Component Title</h3>
+                    </div>
+                </div>
+
+                <!-- Body -->
+                <div class="grid md:grid-cols-12 gap-8 items-start">
+                    <div class="md:col-span-3 text-slate-400 font-mono text-sm">text-base text-slate-600</div>
+                    <div class="md:col-span-9">
+                        <p class="text-base text-slate-600 leading-relaxed">
+                            Ceci est un paragraphe standard. La lisibilité est la clé. L'interligne est généreux
+                            (leading-relaxed) pour une lecture confortable.
+                            La couleur n'est jamais noir pur (slate-900), mais un gris profond pour réduire la fatigue
+                            oculaire.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 3. UI Tokens : Shadows & Radius -->
+        <section id="tokens">
+            <h2 class="text-2xl font-bold mb-8 flex items-center gap-3">
+                <span
+                    class="flex items-center justify-center w-8 h-8 rounded-lg bg-slate-900 text-white text-sm">3</span>
+                Effets & Formes
+            </h2>
+
             <div class="grid md:grid-cols-3 gap-8">
-                <!-- Card 1 -->
-                <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm hover:shadow-lg transition-shadow">
-                    <div class="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mb-6 text-indigo-600 font-bold text-xl">
-                        1
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Architecture Propre</h3>
-                    <p class="text-slate-500">
-                        Design épuré favorisant la lecture et la mise en avant du contenu technique.
-                    </p>
+                <!-- Card default -->
+                <div
+                    class="bg-white rounded-xl p-8 border border-slate-200 shadow-sm flex flex-col items-center justify-center gap-4">
+                    <code class="text-xs bg-slate-100 px-2 py-1 rounded text-slate-500">rounded-xl shadow-sm</code>
+                    <p class="font-medium text-slate-900">Carte Standard</p>
                 </div>
 
-                <!-- Card 2 -->
-                <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm hover:shadow-lg transition-shadow">
-                    <div class="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center mb-6 text-emerald-500 font-bold text-xl">
-                        2
+                <!-- Card Hover -->
+                <div
+                    class="bg-white rounded-xl p-8 border border-white shadow-lg shadow-slate-200/50 flex flex-col items-center justify-center gap-4 transform -translate-y-1">
+                    <code class="text-xs bg-indigo-50 px-2 py-1 rounded text-indigo-600 font-bold">Hover State</code>
+                    <p class="font-medium text-indigo-900">Carte Active / Lift</p>
+                </div>
+
+                <!-- Glassmorphism -->
+                <div
+                    class="relative overflow-hidden rounded-3xl p-8 border border-white/20 shadow-2xl flex flex-col items-center justify-center gap-4">
+                    <!-- Fake bg -->
+                    <div class="absolute inset-0 bg-gradient-to-br from-indigo-500 to-purple-600"></div>
+                    <!-- Glass layer -->
+                    <div class="absolute inset-0 bg-white/20 backdrop-blur-md"></div>
+
+                    <div class="relative z-10 text-center">
+                        <code
+                            class="text-xs bg-black/20 px-2 py-1 rounded text-white mb-2 inline-block">backdrop-blur-md bg-white/20</code>
+                        <p class="font-medium text-white shadow-sm">Glassmorphism</p>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Feedback Visuel</h3>
-                    <p class="text-slate-500">
-                        Utilisation de couleurs sémantiques pour guider l'utilisateur.
-                    </p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <!-- 4. Composants Atomiques -->
+        <section id="components">
+            <h2 class="text-2xl font-bold mb-8 flex items-center gap-3">
+                <span
+                    class="flex items-center justify-center w-8 h-8 rounded-lg bg-slate-900 text-white text-sm">4</span>
+                Exemples Atomiques
+            </h2>
+
+            <div class="bg-white rounded-3xl border border-slate-200 p-8 md:p-12 space-y-12">
+
+                <!-- Boutons -->
+                <div class="space-y-6">
+                    <h3 class="text-sm font-bold text-slate-400 uppercase tracking-wider">Boutons</h3>
+                    <div class="flex flex-wrap gap-4 items-center">
+
+                        <!-- Primary UI/UX -->
+                        <button
+                            class="relative group px-6 py-3 bg-indigo-600 text-white font-semibold rounded-xl shadow-lg shadow-indigo-200 hover:shadow-indigo-300 hover:-translate-y-0.5 active:translate-y-0 active:shadow-none transition-all duration-200">
+                            Primary Action
+                        </button>
+
+                        <!-- Secondary -->
+                        <button
+                            class="px-6 py-3 bg-white text-slate-700 font-semibold rounded-xl border border-slate-200 shadow-sm hover:border-indigo-200 hover:text-indigo-600 transition-colors">
+                            Secondary
+                        </button>
+
+                        <!-- Ghost -->
+                        <button
+                            class="px-6 py-3 text-indigo-600 font-medium hover:bg-indigo-50 rounded-xl transition-colors">
+                            Ghost Link
+                        </button>
+
+                    </div>
+                </div>
+
+                <!-- Badges -->
+                <div class="space-y-6">
+                    <h3 class="text-sm font-bold text-slate-400 uppercase tracking-wider">Badges</h3>
+                    <div class="flex gap-4">
+                        <span
+                            class="inline-flex items-center px-3 py-1 rounded-full bg-indigo-50 text-indigo-700 text-sm font-bold">
+                            Catégorie
+                        </span>
+                        <span
+                            class="inline-flex items-center px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 text-sm font-bold">
+                            Validé
+                        </span>
+                        <span
+                            class="inline-flex items-center px-3 py-1 rounded-full bg-slate-100 text-slate-600 text-sm font-medium">
+                            Neutre
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Inputs -->
+                <div class="space-y-6">
+                    <h3 class="text-sm font-bold text-slate-400 uppercase tracking-wider">Inputs</h3>
+                    <div class="max-w-sm">
+                        <input type="text" placeholder="Entrez du texte..."
+                            class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:bg-white focus:border-indigo-500 focus:ring-4 focus:ring-indigo-500/10 outline-none transition-all placeholder:text-slate-400">
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </div>
 
 </body>
+
 </html>

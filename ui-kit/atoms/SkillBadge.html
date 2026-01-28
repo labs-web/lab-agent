@@ -5,25 +5,36 @@
     <meta charset="UTF-8">
     <title>SkillBadge - Preview</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600&display=swap" rel="stylesheet">
     <script>
-        tailwind.config = { theme: { extend: { fontFamily: { sans: ['Inter'] }, colors: { indigo: { 600: '#4F46E5' } } } } }
+        tailwind.config = { theme: { extend: { fontFamily: { sans: ['Inter'] } } } }
     </script>
 </head>
 
-<body class="bg-gray-100 p-8 flex gap-4">
+<body class="bg-slate-50 p-12 flex gap-6 items-center flex-wrap">
 
-    <!-- Component: SkillBadge -->
+    <!-- Component: Skill Badge Premium (Default) -->
     <div
-        class="inline-flex items-center px-4 py-2 bg-white border border-gray-200 rounded-full shadow-sm hover:shadow-md hover:border-indigo-200 transition-all cursor-default">
-        <span class="w-2 h-2 rounded-full bg-indigo-600 mr-2"></span>
-        <span class="text-sm font-medium text-gray-700">Laravel</span>
+        class="group cursor-default inline-flex items-center px-4 py-2 bg-white border border-slate-200 rounded-xl shadow-sm hover:shadow-md hover:border-indigo-200 hover:-translate-y-0.5 transition-all duration-300">
+        <div
+            class="w-8 h-8 rounded-lg bg-indigo-50 flex items-center justify-center mr-3 group-hover:bg-indigo-100 transition-colors">
+            <!-- Icon placeholder -->
+            <svg class="w-5 h-5 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+            </svg>
+        </div>
+        <span class="text-sm font-semibold text-slate-700 group-hover:text-slate-900">Laravel</span>
     </div>
 
-    <!-- Variant -->
+    <!-- Component: Skill Badge Premium (Active/Selected) -->
     <div
-        class="inline-flex items-center px-4 py-2 bg-indigo-50 border border-indigo-100 rounded-full text-indigo-700 text-sm font-medium">
-        Tailwind CSS
+        class="group cursor-default inline-flex items-center px-4 py-2 bg-indigo-600 border border-indigo-600 rounded-xl shadow-lg shadow-indigo-200 hover:-translate-y-0.5 transition-all duration-300">
+        <div class="w-8 h-8 rounded-lg bg-white/20 flex items-center justify-center mr-3">
+            <svg class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+            </svg>
+        </div>
+        <span class="text-sm font-semibold text-white">Livewire</span>
     </div>
 
 </body>

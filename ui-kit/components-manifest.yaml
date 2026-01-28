@@ -45,14 +45,29 @@ components:
         name: "Laravel"
       notes: "Compact et lisible."
 
-  - name: "ContactForm"
+  - name: "Navbar"
     category: "Molecules"
-    path: "./ui-kit/molecules/ContactForm.html"
-    status: "validated"
-    description: "Formulaire de contact visuel."
+    path: "./ui-kit/molecules/Navbar.html"
+    status: "pending"
+    description: "Menu de navigation principal responsive."
     dependencies: []
     specs:
-      visual: "Stack vertical: Nom, Email, Message, Submit."
-      elements: ["Labels", "Inputs x2", "Textarea", "Button FullWidth"]
+      visual: "Logo texte à gauche, Liens au centre (Desktop), Burger (Mobile)."
+      elements: ["Logo", "Links (Projets, Skills, Contact)", "CTA"]
       data: {}
-      notes: "Design 'Forms plugin' Tailwind. Pas de logique backend."
+      notes: "Doit être sticky et glassmorphism."
+
+  - name: "ContactCard"
+    category: "Molecules"
+    path: "./ui-kit/molecules/ContactCard.html"
+    status: "pending"
+    description: "Affichage statique des informations de contact (Email, Réseaux)."
+    dependencies: []
+    specs:
+      visual: "Carte ou grille avec icônes (Email, GitHub, LinkedIn). Boutons 'Copier' ou Liens."
+      elements: ["Email + Copy", "Social Links", "Location"]
+      data:
+        email: "contact@example.com"
+        github: "github.com/example"
+        linkedin: "linkedin.com/in/example"
+      notes: "Pas de backend. Simple et accessible."

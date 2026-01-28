@@ -33,12 +33,19 @@ Tu interviens dans le workflow `/conception-ui` (Étape 0).
 **But** : Fournir un exemple visuel interactif de la charte pour validation par le développeur.
 
 ### Contenu obligatoire
-Le fichier index.html doit démontrer :
-1. **Palette de couleurs** : Affichage des swatches avec codes HEX
-2. **Typographie** : Exemples de H1, H2, H3, Body, Small
-3. **Boutons** : Variantes primary, secondary, accent
-4. **Cartes** : Exemple de composant avec ombre et bordure
-5. **Espacements** : Démonstration visuelle des tokens
+### Contenu obligatoire
+Le fichier index.html doit être un **Style Guide complet** démontrant :
+1. **Palette de couleurs** : Affichage des familles (Primary, Secondary, Accent, Neutrals) avec codes HEX et classes Tailwind.
+2. **Typographie** : Hiérarchie complète (H1-H6, Body, Small) avec exemples de mise en forme.
+3. **UI Tokens** :
+   - **Ombres** : shadow-sm à shadow-2xl.
+   - **Radius** : rounded-sm à rounded-full.
+   - **Espacements** : Échelle visuelle.
+4. **Composants Atomiques** :
+   - **Boutons** : Toutes les variantes (Primary, Secondary, Ghost, Danger) et états (Hover, Active, Disabled).
+   - **Inputs** : Champs texte, sélecteurs, checkboxes (états Focus, Error).
+   - **Badges** : Différentes couleurs sémantiques.
+5. **Démonstration Visuelle** : Exemples d'application (Card, Banner).
 
 ### Exigences techniques
 - Utiliser TailwindCSS via CDN
