@@ -17,8 +17,7 @@ Cette charte est gérée par le skill `graphiste-charte`.
 1.  **Identifier les User Stories** : "En tant que [rôle], je veux [action] pour [bénéfice]".
 2.  **Wireframing Textuel** : Décrire la structure visuelle de la page sans code HTML.
 3.  **Flux Utilisateur** : Définir les étapes de navigation.
-4.  **Générer le Manifeste** : Mettre à jour `ui-kit/components-manifest.yaml`.
-5.  **Créer les Spécifications** : Générer un fichier `.spec.md` pour chaque composant identifié.
+4.  **Générer le Manifeste** : Mettre à jour `ui-kit/components-manifest.yaml` avec les spécifications intégrées.
 
 ## Philosophie
 - **Utilisateur Roi** : L'interface doit être évidente.
@@ -39,46 +38,16 @@ components:
     status: "pending | validated"
     description: "Description courte."
     dependencies: []
+    specs:
+      visual: "Structure visuelle (Zone Haute, Centrale, Basse)"
+      elements: ["Description Éléments Requis"]
+      data: { "key": "value" }
+      notes: "Contraintes de design"
 ```
 
 ---
 
-## Output 2 : Fichiers de Spécification (.spec.md)
-
-**Emplacement** : `ui-kit/[category]/[NomDuComposant].spec.md`
-**But** : Description détaillée du composant AVANT son développement HTML.
-
-### Format du fichier .spec.md
-```markdown
-# Spécification : NomDuComposant
-
-## Description
-Brève description du rôle et de l'objectif du composant.
-
-## Structure Visuelle (Wireframe Textuel)
-- **Zone Haute** : [Description]
-- **Zone Centrale** : [Description]
-- **Zone Basse** : [Description]
-
-## Éléments Requis
-- [ ] Élément 1 (ex: Titre H2)
-- [ ] Élément 2 (ex: Image de couverture)
-- [ ] Élément 3 (ex: Bouton CTA)
-
-## Variantes (optionnel)
-- Variante A : [Description]
-- Variante B : [Description]
-
-## Données Attendues (pour le mockup)
-- `titre` : "Exemple de titre"
-- `image` : "placeholder.jpg"
-- `lien` : "#"
-
-## Notes pour le Créateur UI
-Instructions spéciales ou contraintes de design.
-```
-
 ### Workflow de Création
-1.  **Concepteur UI** : Crée le fichier `.spec.md` avec la description.
-2.  **Créateur UI** : Lit le `.spec.md` et produit le fichier `.html` correspondant.
+1.  **Concepteur UI** : Met à jour le `components-manifest.yaml` avec les specs.
+2.  **Créateur UI** : Lit le manifest et produit le fichier `.html` correspondant.
 3.  **Validation** : Le status passe de `pending` à `validated` dans le manifeste.

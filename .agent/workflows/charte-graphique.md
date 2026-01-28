@@ -19,12 +19,15 @@ Appelé par `/processus-developpement` (Phase 0) ou à la demande.
 
 ### Étape 2 : Création de la Charte
 - **Skill** : `graphiste-charte`
-- **Action** : Créer le fichier `ui-kit/charte-graphique/charte.md` avec :
-    - Palette de couleurs (principales + neutres)
-    - Typographie (police, tailles, poids)
-    - Espacements (tokens)
-    - Bordures et ombres
-- **Output** : Fichier `ui-kit/charte-graphique/charte.md`.
+- **Action** :
+    1. Créer le fichier `ui-kit/charte-graphique/charte.md` :
+        - Palette de couleurs (principales + neutres)
+        - Typographie (police, tailles, poids)
+        - Espacements (tokens)
+        - Bordures et ombres
+    2. Créer le fichier `ui-kit/charte-graphique/index.html` :
+        - Une page de démonstration utilisant la charte définie.
+- **Output** : Fichiers `charte.md` et `index.html` dans `ui-kit/charte-graphique/`.
 
 ### Checkpoint
 - Demander la validation de la charte par l'utilisateur.

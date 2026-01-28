@@ -1,0 +1,58 @@
+components:
+  - name: "Hero"
+    category: "Layouts"
+    path: "./ui-kit/layouts/Hero.html"
+    status: "pending"
+    description: "Section d'introduction avec titre, sous-titre et boutons d'action."
+    dependencies: []
+    specs:
+      visual: "Zone Centrale : Badge 'Dev Laravel', Titre H1, Ss-titre, 2 boutons. Fond abstrait Indigo."
+      elements: ["Badge", "Titre H1", "Paragraphe", "Bouton Primary", "Bouton Secondary"]
+      data: 
+        badge_text: "Développeur Laravel Senior"
+        title: "Construisons des applications Robustes"
+        cta_primary: "Voir mes projets"
+        cta_secondary: "Me contacter"
+      notes: "Contraste text/bg important."
+
+  - name: "ProjectCard"
+    category: "Molecules"
+    path: "./ui-kit/molecules/ProjectCard.html"
+    status: "pending"
+    description: "Carte affichant un projet avec image, titre, description et tags."
+    dependencies: []
+    specs:
+      visual: "Haut: Image 16/9. Centre: Badge, Titre, Desc. Bas: Tags, Link."
+      elements: ["Image", "Badge Catégorie", "Titre H3", "Desc courte", "Tags (Pill)", "Lien"]
+      data:
+        image_url: "placeholder.jpg"
+        category: "SaaS"
+        title: "Gestion Immobilière"
+        description: "Plateforme complète de gestion locative."
+        tags: ["Laravel", "VueJS", "MySQL"]
+      notes: "Shadow-hover effect requis."
+
+  - name: "SkillBadge"
+    category: "Atoms"
+    path: "./ui-kit/atoms/SkillBadge.html"
+    status: "pending"
+    description: "Badge simple pour afficher une compétence."
+    dependencies: []
+    specs:
+      visual: "Pill shape, background léger, texte coloré."
+      elements: ["Container rounded-full", "Text"]
+      data:
+        name: "Laravel"
+      notes: "Compact et lisible."
+
+  - name: "ContactForm"
+    category: "Molecules"
+    path: "./ui-kit/molecules/ContactForm.html"
+    status: "pending"
+    description: "Formulaire de contact visuel."
+    dependencies: []
+    specs:
+      visual: "Stack vertical: Nom, Email, Message, Submit."
+      elements: ["Labels", "Inputs x2", "Textarea", "Button FullWidth"]
+      data: {}
+      notes: "Design 'Forms plugin' Tailwind. Pas de logique backend."
