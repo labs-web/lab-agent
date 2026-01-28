@@ -17,6 +17,4 @@ Chaque réponse doit obligatoirement commencer par une ligne résumant l'état d
 > **Contexte de l'Agent** : **Rôle** : [Rôle actif par Skill] | **Skill** : [Skill actif] | **Workflow** : [Workflow en cours].
 
 ## 5. Respect des Modes
-- **Mode Chat** (`>` en début de message ou hors workflow) : L'agent répond aux questions mais ne modifie PAS les fichiers du projet.
-- **Mode Configuration** (`>>` ou Workflow `/evolution-agent`) : L'agent modifie uniquement le dossier `.agent/`.
-- **Mode Développement** (Workflows Projet) : L'agent modifie le code source selon le plan validé.
+Voir le fichier **`00-meta-interaction.md`** pour les protocoles stricts concernant les préfixes `>` et `>>`.
