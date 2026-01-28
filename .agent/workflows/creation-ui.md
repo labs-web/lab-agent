@@ -23,7 +23,12 @@ Validation de `/conception-ui`.
 - **Technologie** : HTML5 + Tailwind CSS exclusivement.
 - **Output** : Fichiers HTML autonomes et prévisualisables.
 
-### Étape 3 : Assemblage de la Page
+### Étape 3 : Mise à jour du UI Kit
+- **Skill** : `createur-ui`
+- **Action** : Ajouter le lien du nouveau composant dans le menu de `ui-kit/index.html`.
+- **Objectif** : Maintenir la galerie de composants à jour et testable.
+
+### Étape 4 : Assemblage de la Page
 - **Skill** : `createur-ui`
 - **Action** : Créer la page complète statique (avec fausses données).
 - **Output** : Fichier HTML prévisualisable dans un navigateur.
