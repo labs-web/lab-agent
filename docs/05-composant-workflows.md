@@ -36,3 +36,12 @@ On découpe les Workflows par **Type de Mission**.
 1. `Analyser` (Appel Skill Architecte) 
 2. `Coder` (Appel Skill Dev) 
 3. `Tester` (Appel Skill QA).
+
+## Migration Prompt vers Agent
+Quelle partie du "Mega-Prompt" classique devient un Workflow ?
+*   **L'Instruction / Tâche (3)** : "Crée le contrôleur pour le panier d'achat... vérifie que... fais ensuite...".
+
+Si l'instruction contient plus d'un verbe d'action (ex: "Crée ET Teste"), c'est un signal fort pour créer un Workflow. L'ancien prompt monolithique décrivait souvent une procédure implicite ; le Workflow la rend explicite et répétable.
+
+*Avant :* `Crée une page de login [instructions implicites de procéder par étapes]`
+*Après :* Workflow `/feature-login.md` (Étapes 1, 2, 3 explicites).

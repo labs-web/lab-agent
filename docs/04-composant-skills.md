@@ -46,3 +46,13 @@ Si une pratique est critique et obligatoire (ex: "Sécuriser les routes"), elle 
 
 ## Exemple
 Le Skill `createur-ui` sait transformer une maquette mentale en code HTML/Tailwind valide.
+
+## Migration Prompt vers Agent
+Quelle partie du "Mega-Prompt" classique devient un Skill ?
+*   **Le Persona (1)** : "Agis comme un Expert Symfony Senior".
+*   **Le Contexte Technique (2)** : "Projet PHP 7.4 avec ces librairies...".
+
+Chaque fois que vous avez envie de dire à l'IA "Qui elle est" ou "Quels outils utiliser", c'est un Skill.
+
+*Avant :* `Agis comme un expert Senior PHP... utilise TailwindCSS v3.0...`
+*Après :* Skill `expert-php` et Skill `expert-tailwind`.

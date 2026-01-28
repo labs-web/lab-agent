@@ -28,3 +28,11 @@ On découpe les Rules par **Périmètre de Responsabilité** :
 
 > **Pourquoi pas dans le Skill ?**
 > Si cette interdiction était dans le Skill "Expert SQL", elle disparaîtrait si l'on changeait d'expert (ex: passage à un Expert NoSQL) ou si l'on utilisait un autre Skill (ex: "Expert Prototype"). En la mettant dans une **Rule**, elle devient une **Loi Universelle** qui s'impose à TOUS les Skills, garantissant la sécurité peu importe qui écrit le code.
+
+## Migration Prompt vers Agent
+Quelle partie du "Mega-Prompt" classique devient une Rule ?
+*   **Les Contraintes (4)** : Toutes les phrases commençant par "ATTENTION", "IMPORTANT", "NE FAIS PAS", "RESPECTE".
+*   **Le Format de sortie (5)** : Si le format est imposé pour tout le projet (ex: "Toujours en Français", "Toujours en JSON").
+
+*Avant :* `...IMPORTANT : Utilise l'architecture Hexagonale, pas de logique dans le contrôleur...`
+*Après :* Rule `architecture-hexagonal.md`.
