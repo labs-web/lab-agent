@@ -28,23 +28,23 @@ On découpe les Workflows par **Type de Mission**.
 *   Créez un workflow quand il y a un **Début** clair, une **Fin** claire, et des **Étapes intermédiaires** nécessitant validation ou changement de compétence.
 
 ## Ce qu'on ne met PAS dans un Workflow
-*   Les détails techniques d'implémentation ("Utilise telle fonction PHP"). C'est le rôle du Skill. Le Workflow doit rester lisible par un humain non-expert.
+*   Les détails techniques d'implémentation ("Utilise telle classe Tailwind"). C'est le rôle du Skill. Le Workflow doit rester lisible par un humain non-expert.
 *   Les règles permanentes ("N'oublie pas la sécu"). C'est le rôle des Rules.
 
 ## Exemple
-**Workflow `/implementation`** : 
-1. `Analyser` (Appel Skill Architecte) 
-2. `Coder` (Appel Skill Dev) 
-3. `Tester` (Appel Skill QA).
+**Workflow `/processus-developpement`** : 
+1. `Designer` (Appel Skill Graphiste) 
+2. `Maquetter` (Appel Skill Concepteur) 
+3. `Coder` (Appel Skill Créateur).
 
 ## Migration Prompt vers Agent
 Quelle partie du "Mega-Prompt" classique devient un Workflow ?
-*   **L'Instruction / Tâche (3)** : "Crée le contrôleur pour le panier d'achat... vérifie que... fais ensuite...".
+*   **L'Instruction / Tâche (3)** : "Crée le composant Navbar... vérifie le responsive... assemble la page...".
 
 Si l'instruction contient plus d'un verbe d'action (ex: "Crée ET Teste"), c'est un signal fort pour créer un Workflow. L'ancien prompt monolithique décrivait souvent une procédure implicite ; le Workflow la rend explicite et répétable.
 
-*Avant :* `Crée une page de login [instructions implicites de procéder par étapes]`
-*Après :* Workflow `/feature-login.md` (Étapes 1, 2, 3 explicites).
+*Avant :* `Crée une page d'accueil [instructions implicites de procéder par étapes]`
+*Après :* Workflow `processus-developpement.md` (Étapes 1, 2, 3 explicites).
 
 ---
 

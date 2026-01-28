@@ -35,7 +35,7 @@ Voici la configuration complète de l'agent "Usine Statique" que vous avez maint
 
 *   **Lancer le Projet**
     *   *Commande* : "Crée la landing page du site vitrine"
-    *   *Agent* : Charge le Workflow `/creation-site-statique.md`.
+    *   *Agent* : Charge le Workflow Master `/processus-developpement` (qui orchestre automatiquement Charte → Concept → Création).
 
 *   **Modifier une Règle**
     *   *Commande* : `>> Ajoute une règle sur l'accessibilité`

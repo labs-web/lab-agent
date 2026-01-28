@@ -24,28 +24,47 @@ On découpe les Rules par **Périmètre de Responsabilité** :
 *   Des snippets de code ou des tutoriaux d'implémentation (C'est un Skill).
 
 ## Exemple
-> "Interdiction absolue d'utiliser du SQL brut dans un Contrôleur."
+> "Interdiction absolue d'utiliser du CSS inline (`<style>`) ou des attributs `style`."
 
 > **Pourquoi pas dans le Skill ?**
-> Si cette interdiction était dans le Skill "Expert SQL", elle disparaîtrait si l'on changeait d'expert (ex: passage à un Expert NoSQL) ou si l'on utilisait un autre Skill (ex: "Expert Prototype"). En la mettant dans une **Rule**, elle devient une **Loi Universelle** qui s'impose à TOUS les Skills, garantissant la sécurité peu importe qui écrit le code.
+> Si cette interdiction était dans le Skill "Expert Tailwind", elle disparaîtrait si l'on changeait d'expert ou si l'on utilisait un autre framework. En la mettant dans une **Rule**, elle devient une **Loi Universelle** qui s'impose à TOUS, garantissant la propreté du code.
 
 ## Migration Prompt vers Agent
 Quelle partie du "Mega-Prompt" classique devient une Rule ?
 *   **Les Contraintes (4)** : Toutes les phrases commençant par "ATTENTION", "IMPORTANT", "NE FAIS PAS", "RESPECTE".
-*   **Le Format de sortie (5)** : Si le format est imposé pour tout le projet (ex: "Toujours en Français", "Toujours en JSON").
+*   **Le Format de sortie (5)** : Si le format est imposé pour tout le projet (ex: "Toujours en Français").
 
-*Avant :* `...IMPORTANT : Utilise l'architecture Hexagonale, pas de logique dans le contrôleur...`
-*Après :* Rule `architecture-hexagonal.md`.
+*Avant :* `...IMPORTANT : Pas de styles custom, utilise exclusivement Tailwind...`
+*Après :* Rule `02-stack-technique.md`.
 
 ---
 
 ## Application au Tutoriel : Les 5 Piliers
 Pour notre Agent WebBuilder, nous déployons 5 Règles distinctes pour couvrir tous les aspects de la gouvernance :
 
-1.  **[00-meta-interaction.md](file:///e:/labs-web/lab-agent/.agent/rules/00-meta-interaction.md)** : La Constitution. Définit comment on parle à l'agent (`>`, `>>`).
-2.  **[01-identite-persona.md](file:///e:/labs-web/lab-agent/.agent/rules/01-identite-persona.md)** : La Carte d'Identité. "Je suis un Architecte Frontend, je refuse le PHP".
-3.  **[01-ui-first.md](file:///e:/labs-web/lab-agent/.agent/rules/01-ui-first.md)** : La Loi Métier. "Pas de page sans composant".
-4.  **[02-stack-technique.md](file:///e:/labs-web/lab-agent/.agent/rules/02-stack-technique.md)** : Les Standards Techniques. "HTML5, Tailwind, No SQL".
-5.  **[03-qualite-securite.md](file:///e:/labs-web/lab-agent/.agent/rules/03-qualite-securite.md)** : Les Best Practices. Accessibilité et Performance.
+### 1. La Constitution : Protocoles d'Interaction
+**Fichier** : [00-meta-interaction.md](file:///e:/labs-web/lab-agent/.agent/rules/00-meta-interaction.md)
+*   **Rôle** : Définit les modes de communication avec l'agent.
+*   **Contenu** : Interprétation des préfixes `>` (Mode Discussion) et `>>` (Mode Évolution Agent). C'est la loi qui régit quand l'agent doit agir ou simplement répondre.
+
+### 2. La Carte d'Identité : Qui est l'Agent ?
+**Fichier** : [01-identite-persona.md](file:///e:/labs-web/lab-agent/.agent/rules/01-identite-persona.md)
+*   **Rôle** : Définit la personnalité et les limitations fondamentales de l'agent.
+*   **Contenu** : "Je suis un Architecte Frontend spécialisé en sites statiques. Je refuse catégoriquement le PHP et le SQL." C'est l'ADN de l'agent.
+
+### 3. La Loi Métier : UI-First
+**Fichier** : [01-ui-first.md](file:///e:/labs-web/lab-agent/.agent/rules/01-ui-first.md)
+*   **Rôle** : Impose la méthodologie de travail "Composants d'abord".
+*   **Contenu** : Interdit formellement de créer des pages complètes (`index.html`) tant que les composants unitaires (`ui-kit/`) ne sont pas validés. Force la qualité visuelle avant l'assemblage.
+
+### 4. Les Standards Techniques : La Stack Autorisée
+**Fichier** : [02-stack-technique.md](file:///e:/labs-web/lab-agent/.agent/rules/02-stack-technique.md)
+*   **Rôle** : Définit la "boîte à outils" technique autorisée.
+*   **Contenu** : Stack stricte HTML5 + Tailwind CSS v3 + Vanilla JS. Aucun framework lourd (React/Vue), aucun backend (PHP/SQL). Structure de dossiers imposée (`/ui-kit`, `/assets`, racine pour `.html`).
+
+### 5. Les Best Practices : Qualité & Performance
+**Fichier** : [03-qualite-securite.md](file:///e:/labs-web/lab-agent/.agent/rules/03-qualite-securite.md)
+*   **Rôle** : Garantit la qualité professionnelle du code produit.
+*   **Contenu** : Standards de code propre (DRY, Pixel Perfect), performance web (Core Web Vitals, images optimisées), accessibilité (WCAG), et sécurité front-end (liens externes sécurisés).
 
 C'est ce maillage qui empêche l'agent de dériver.

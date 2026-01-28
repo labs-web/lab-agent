@@ -1,22 +1,31 @@
-# Documentation de l'Agent
+# Documentation & Tutoriel Antigravity
 
-Cette documentation est divisée en plusieurs sections pour faciliter la compréhension.
+Cette documentation a une double vocation :
+1.  **Référence** : Définir les concepts (Rules, Skills, Workflows).
+2.  **Tutoriel** : Construire pas à pas un agent "WebBuilder" (UI-First).
 
 ## Table des Matières
 
-1.  **[Introduction et Contexte](./01-introduction-et-contexte.md)**
-    *   Objectifs de la documentation.
-    *   Comprendre le "Prompt" classique et ses limites (problème du Mega-Prompt).
+1.  **[Introduction & Mission](./01-introduction-et-contexte.md)**
+    *   Concepts généraux (LLM, Mémoire, Outils).
+    *   **Fil Rouge** : Présentation de l'agent WebBuilder.
 
-2.  **[Le Concept Antigravity](./02-concept-antigravity.md)**
-    *   La solution architecturale proposée.
-    *   Fonctionnement technique de l'agent (Réception > Chargement > Exécution).
+2.  **[Le Cerveau (Architecture)](./02-concept-antigravity.md)**
+    *   Fonctionnement technique Antigravity.
+    *   Mapping : System Prompt = Rules.
 
-3.  **[Les Composants Fondamentaux](./03-composants-fondamentaux.md)**
-    *   Définition détaillée des **Rules** (Lois).
-    *   Définition détaillée des **Skills** (Expertises).
-    *   Définition détaillée des **Workflows** (Processus).
-    *   Tableau comparatif.
+3.  **[Les Lois (Rules)](./03-composant-rules.md)**
+    *   Définition et Gouvernance.
+    *   **Fil Rouge** : Création de la règle `01-ui-first.md`.
 
-4.  **[Cas Pratique : Workflow](./04-cas-pratique-workflow.md)**
-    *   Exemple concret : Transformation de la méthode "Maquettage First" en configuration Antigravity.
+4.  **[Les Experts (Skills)](./04-composant-skills.md)**
+    *   Découpage technique et "Savoir-Faire".
+    *   **Fil Rouge** : Création des experts HTML et Tailwind.
+
+5.  **[Le Chef d'Orchestre (Workflows)](./05-composant-workflows.md)**
+    *   Planification et Processus.
+    *   **Fil Rouge** : Écriture du script `/creation-site-statique.md`.
+
+6.  **[Guide de Démarrage Rapide](./06-guide-demarrage.md)**
+    *   Résumé de la structure finale.
+    *   Cheat Sheet des commandes.

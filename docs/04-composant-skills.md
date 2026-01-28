@@ -21,8 +21,8 @@ Il charge un Skill uniquement :
 
 ## Stratégie de découpage
 On définit généralement les Skills par **Domaine d'Expertise Technique** (Langage, Framework, Rôle) plutôt que par phase de projet.
-*   *Bon découpage* : `expert-php`, `expert-tailwind`, `analyste-bdd`.
-*   *Pourquoi ?* Car l'`expert-php` intervient aussi bien en phase d'implémentation (création) qu'en phase de maintenance (bugfix).
+*   *Bon découpage* : `expert-html`, `expert-tailwind`, `createur-ui`.
+*   *Pourquoi ?* Car l'`expert-tailwind` intervient aussi bien en phase de création qu'en phase de retouches.
 
 ## Relation Skill <-> Rule
 > *Si un SKILL doit indiquer des règles, on doit d'abord citer les règles dans Rules ?*
@@ -31,16 +31,16 @@ On définit généralement les Skills par **Domaine d'Expertise Technique** (Lan
 Le Skill contient les "Best Practices" techniques (la bonne façon de faire).
 La Rule contient les "Interdictions" légales (ce qu'il ne faut pas faire).
 
-Si une pratique est critique et obligatoire (ex: "Sécuriser les routes"), elle doit être écrite dans une **Rule**. Le Skill, lui, contiendra le code pour appliquer cette sécurité.
-*   **Rule** : "Toute route administrative DOIT être protégée."
-*   **Skill** : "Voici le code Middleware pour protéger une route."
+Si une pratique est critique et obligatoire (ex: "Images responsives"), elle doit être écrite dans une **Rule**. Le Skill, lui, contiendra le code pour appliquer cette contrainte.
+*   **Rule** : "Toute image doit avoir `width` et `height`."
+*   **Skill** : "Voici le snippet HTML pour une image `<img>` optimisée."
 
 ## Ce qu'on ne met PAS dans un Skill
 *   La planification des étapes du projet (C'est un Workflow).
 *   Les interdictions absolues et globales (C'est une Rule). Le Skill ne décide pas de la loi, il l'exécute.
 
 ## Contenu type d'un Skill
-*   Instructions techniques ("Best practices PHP 8.2").
+*   Instructions techniques ("Best practices Tailwind v3").
 *   Templates de code.
 *   Documentation de référence court (Cheat-sheets).
 
@@ -49,13 +49,13 @@ Le Skill `createur-ui` sait transformer une maquette mentale en code HTML/Tailwi
 
 ## Migration Prompt vers Agent
 Quelle partie du "Mega-Prompt" classique devient un Skill ?
-*   **Le Persona (1)** : "Agis comme un Expert Symfony Senior".
-*   **Le Contexte Technique (2)** : "Projet PHP 7.4 avec ces librairies...".
+*   **Le Persona (1)** : "Agis comme un Expert HTML Sémantique".
+*   **Le Contexte Technique (2)** : "Projet Web Statique Tailwind v3".
 
 Chaque fois que vous avez envie de dire à l'IA "Qui elle est" ou "Quels outils utiliser", c'est un Skill.
 
-*Avant :* `Agis comme un expert Senior PHP... utilise TailwindCSS v3.0...`
-*Après :* Skill `expert-php` et Skill `expert-tailwind`.
+*Avant :* `Agis comme un expert CSS... utilise TailwindCSS v3.0...`
+*Après :* Skill `expert-tailwind`.
 
 ---
 

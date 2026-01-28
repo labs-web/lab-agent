@@ -15,7 +15,7 @@ Comment l'agent utilise-t-il ces fichiers ?
     *   Toutes les **Rules** sont chargées en mémoire (L'agent connait désormais toutes les lois potentielles).
     *   Le **Workflow** correspondant (Le plan d'action est sélectionné).
     *   Les **Skills** nécessaires (Les outils sont convoqués).
-3.  **Exécution & Surveillance** : L'agent suit le Workflow. À chaque action (ex: "Créer un fichier PHP"), il vérifie dynamiquement dans sa mémoire si une Règle correspondante (ex: "Règle PHP") doit s'activer.
+3.  **Exécution & Surveillance** : L'agent suit le Workflow. À chaque action (ex: "Créer un fichier HTML"), il vérifie dynamiquement dans sa mémoire si une Règle correspondante (ex: "Règle UI-First") doit s'activer.
 
 ## L'Architecture Antigravity sous le capot
 
