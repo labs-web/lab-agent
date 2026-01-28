@@ -47,15 +47,16 @@ Pourquoi ne pas simplement utiliser ce type de prompt ?
 
 ---
 
-## 2. Objectif du Tutoriel : L'Agent "WebBuilder"
+## 2. Objectif du Tutoriel : Le "Static WebBuilder" Industriel
 
-Pour rendre cette documentation concrète, nous allons construire ensemble un exemple fil rouge tout au long des chapitres.
+Ce n'est pas une simple démo. Cette documentation est le **Blueprint** exact de l'agent "Static WebBuilder" que vous utilisez actuellement.
 
 **Notre Mission :**
-Configurer un agent Antigravity capable de coder des sites web statiques modernes.
+Comprendre comment on passe d'un script simple à une **Usine Logicielle Statique** capable d'assembler des sites web complexes sans aucune dette technique backend.
 
-**La Contrainte Métier (Le Challenge) :**
-Nous voulons imposer une méthode de travail **"UI-First"**.
-> *"L'architecture force respectueusement le développeur à ne jamais toucher au code final tant que les composants graphiques (Boutons, Cards) ne sont pas validés."*
+**L'Architecture Cible (Ce que nous allons décortiquer) :**
+*   **5 Règles** de Gouvernance (Identité, UI-First, Stack...).
+*   **5 Experts** (Skills) spécialisés (du Graphiste à l'Intégrateur).
+*   **1 Master Workflow** qui orchestre des sous-processus.
 
-Dans les fichiers suivants, repérez les encarts **"Application au Tutoriel"** pour voir comment configurer cet agent pas à pas.
+C'est une approche "Reverse Engineering" : nous partons du résultat final (l'agent complet) pour expliquer chaque pièce du puzzle.
