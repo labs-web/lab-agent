@@ -39,22 +39,13 @@ Quelle partie du "Mega-Prompt" classique devient une Rule ?
 
 ---
 
-## Application au Tutoriel : L'Agent WebBuilder
+## Application au Tutoriel : Les 5 Piliers
+Pour notre Agent WebBuilder, nous déployons 5 Règles distinctes pour couvrir tous les aspects de la gouvernance :
 
-Pour notre agent Web Statique, nous allons créer notre première loi.
+1.  **[00-meta-interaction.md](file:///e:/labs-web/lab-agent/.agent/rules/00-meta-interaction.md)** : La Constitution. Définit comment on parle à l'agent (`>`, `>>`).
+2.  **[01-identite-persona.md](file:///e:/labs-web/lab-agent/.agent/rules/01-identite-persona.md)** : La Carte d'Identité. "Je suis un Architecte Frontend, je refuse le PHP".
+3.  **[01-ui-first.md](file:///e:/labs-web/lab-agent/.agent/rules/01-ui-first.md)** : La Loi Métier. "Pas de page sans composant".
+4.  **[02-stack-technique.md](file:///e:/labs-web/lab-agent/.agent/rules/02-stack-technique.md)** : Les Standards Techniques. "HTML5, Tailwind, No SQL".
+5.  **[03-qualite-securite.md](file:///e:/labs-web/lab-agent/.agent/rules/03-qualite-securite.md)** : Les Best Practices. Accessibilité et Performance.
 
-**Fichier à créer :** `.agent/rules/01-ui-first.md`
-
-```markdown
-# Loi UI-First
-
-## Principe
-L'interface utilisateur doit être atomique et validée AVANT d'être assemblée.
-
-## Interdictions
-1.  Il est **INTERDIT** de créer une page complète (`index.html`) si les composants nécessaires (boutons, cartes) n'existent pas dans le dossier `ui-kit/`.
-2.  Il est **INTERDIT** d'écrire du CSS dans le header HTML (`<style>`). Tout le style doit passer par les classes utilitaires (Tailwind).
-
-## Conséquence
-Si l'utilisateur demande "Fais-moi la Page d'Accueil", l'agent doit refuser et proposer : "Je dois d'abord créer les composants Header et Hero dans le UI-Kit".
-```
+C'est ce maillage qui empêche l'agent de dériver.

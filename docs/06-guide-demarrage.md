@@ -5,20 +5,30 @@ Voici un récapitulatif condensé pour configurer votre agent "WebBuilder" (UI-F
 
 ## 1. Structure Finale du Dossier `.agent/`
 
-Une fois configuré, votre dossier `.agent` doit ressembler exactement à ceci :
+## 1. Structure Finale du Dossier `.agent/`
+
+Voici la configuration complète de l'agent "Usine Statique" que vous avez maintenant :
 
 ```
 .agent/
 ├── rules/
-│   ├── 00-gouvernance.md       <-- "Pas de SQL brut", "Pas de modifs hors sujet"
-│   └── 01-ui-first.md          <-- [TUTORIEL] "Interdit de coder sans maquette validée"
+│   ├── 00-gouvernance.md       <-- Protocoles > et >>
+│   ├── 01-identite.md          <-- Persona "Architecte Frontend"
+│   ├── 01-ui-first.md          <-- [CRITIQUE] Bloque le code sans maquette
+│   ├── 02-stack.md             <-- Stack HTML5/Tailwind Only
+│   └── 03-qualite.md           <-- A11y & Perf
 ├── skills/
-│   ├── createur-ui/
-│   │   └── SKILL.md            <-- [TUTORIEL] Expert HTML Atomique
-│   └── expert-tailwind/
-│       └── SKILL.md            <-- [TUTORIEL] Doc technique Tailwind
+│   ├── architecte-agent/       <-- Maintenance du système
+│   ├── concepteur-ui/          <-- Wireframes
+│   ├── createur-ui/            <-- Code HTML Atomique
+│   ├── expert-tailwind/        <-- Dictionnaire CSS v3
+│   └── graphiste-charte/       <-- Couleurs & Fonts
 └── workflows/
-    └── creation-site-statique.md <-- [TUTORIEL] Le script d'orchestration
+    ├── processus-developpement.md <-- [MASTER] L'orchestrateur général
+    ├── charte-graphique.md        <-- [SUB]
+    ├── conception-ui.md           <-- [SUB]
+    ├── creation-ui.md             <-- [SUB]
+    └── evolution-agent.md         <-- [MAINTENANCE]
 ```
 
 ## 2. Cheat Sheet : Les Commandes

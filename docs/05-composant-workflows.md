@@ -48,35 +48,24 @@ Si l'instruction contient plus d'un verbe d'action (ex: "Crée ET Teste"), c'est
 
 ---
 
-## Application au Tutoriel : L'Agent WebBuilder
+## Application au Tutoriel : L'Orchestrateur Industriel
 
-C'est ici que tout s'assemble. Nous allons créer le script qui force l'agent à travailler proprement.
+Pour notre WebBuilder, un simple script ne suffit pas. Nous avons mis en place une **Orchestration Hiérarchique**.
 
-**Fichier à créer :** `.agent/workflows/creation-site-statique.md`
+### 1. Le Chef d'Orchestre (Master Workflow)
+*   **Fichier** : `processus-developpement.md`
+*   **Rôle** : Il ne fait rien lui-même. Il délègue.
+*   **Logique** :
+    1.  Appelle `/charte-graphique` (Si besoin).
+    2.  Appelle `/conception-ui`.
+    3.  Appelle `/creation-ui`.
+    4.  Finit le travail (Assemblage).
 
-```markdown
-# Workflow : Création Page Web (Mode UI-First)
+### 2. Les Spécialistes (Sub-Workflows)
+Chaque sous-workflow est une procédure autonome :
+*   `/charte-graphique.md` : Guide le `graphiste-charte` pour définir les couleurs.
+*   `/conception-ui.md` : Guide le `concepteur-ui` pour les wireframes.
+*   `/creation-ui.md` : Guide le `createur-ui` pour le code HTML.
 
----
-description: Crée une page web en validant d'abord les composants graphiques.
----
-
-## 1. Phase Micro-UI (Le Maquettage)
-L'agent doit d'abord lister les composants nécessaires.
-- **Action** : Analyser la demande (ex: "Page Accueil").
-- **Commande** : Créer les fichiers dans `ui-kit/` (ex: `button.html`, `navbar.html`).
-- **Validation** : Demander à l'utilisateur de valider visuellement ces fichiers.
-
-// STOP : Ne pas continuer tant que l'utilisateur n'a pas dit "C'est beau".
-
-## 2. Phase Assemblage (Le Montage)
-Une fois les briques validées, on construit la maison.
-- **Action** : Créer le fichier `index.html`.
-- **Contrainte** : Utiliser uniquement les composants du `ui-kit/` via des iframes ou du copier-coller intelligent.
-- **Action** : Lier le CSS (Tailwind).
-
-## 3. Phase Livraison
-- **Action** : Vérifier que tout est responsive.
-```
-
-Avec ce fichier, même si le modèle "a envie" de tout coder d'un coup, le framework Antigravity l'oblige à s'arrêter à l'étape 1. C'est la puissance du Workflow.
+### La Puissance du Système
+Grâce à ce découpage, si demain vous voulez changer votre méthode de design (ex: passer de "Wireframe" à "Mockup Haute Fidélité"), vous modifiez uniquement le sous-workflow `/conception-ui.md`. Le Master Workflow, lui, reste identique. C'est du **Code Modulaire Appliqué aux Process**.

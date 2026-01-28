@@ -59,23 +59,24 @@ Chaque fois que vous avez envie de dire à l'IA "Qui elle est" ou "Quels outils 
 
 ---
 
-## Application au Tutoriel : L'Agent WebBuilder
+## Application au Tutoriel : La "Dream Team" (5 Experts)
 
-Nous avons besoin de deux experts pour notre agence Web.
+Pour notre agence Web Statique, nous recrutons 5 profils distincts. L'agent changera de casquette selon le besoin :
 
-**1. L'Architecte UI (`.agent/skills/createur-ui/SKILL.md`)**
-C'est lui qui transforme le besoin flou en code précis.
-*   *Instruction* : "Tu es un expert en design atomique. Tu ne produis que des fragments HTML."
+### 1. Le Créatif
+*   **[graphiste-charte](file:///e:/labs-web/lab-agent/.agent/skills/graphiste-charte/SKILL.md)** : L'Artiste.
+    *   *Rôle* : Définit les palettes de couleurs, les typographies, l'ambiance émotionnelle. Intervient au tout début.
 
-**2. L'Expert Technique (`.agent/skills/expert-tailwind/SKILL.md`)**
-C'est la documentation vivante.
-*   *Contenu* :
-    ```markdown
-    # Expert Tailwind 3.0
-    Voici les classes autorisées pour le projet :
-    - Couleurs : `bg-blue-500`, `text-slate-800` (Pas de couleurs arbitraires).
-    - Espacement : Échelle de 4px (`p-4`, `m-2`).
-    - Flexbox : Toujours préférer Flex à Grid pour les layouts simples.
-    ```
+### 2. Les Concepteurs (Le Bureau d'Étude)
+*   **[concepteur-ui](file:///e:/labs-web/lab-agent/.agent/skills/concepteur-ui/SKILL.md)** : L'UX Designer.
+    *   *Rôle* : Dessine les Wireframes et définit l'expérience utilisateur sans toucher au code.
+*   **[architecte-agent](file:///e:/labs-web/lab-agent/.agent/skills/architecte-agent/SKILL.md)** : Le Gardien du système.
+    *   *Rôle* : Gère la structure interne `.agent`, s'assure que les Skills et Workflows sont bien rangés.
 
-Quand l'agent devra centrer une div, il lira ce Skill et saura qu'il doit utiliser `flex justify-center` et non `text-align: center`.
+### 3. Les Réalisateurs (La Factory)
+*   **[createur-ui](file:///e:/labs-web/lab-agent/.agent/skills/createur-ui/SKILL.md)** : L'Intégrateur.
+    *   *Rôle* : Transforme les wireframes en HTML. C'est le "maçon" qui pose les briques.
+*   **[expert-tailwind](file:///e:/labs-web/lab-agent/.agent/skills/expert-tailwind/SKILL.md)** : La Bible Technique.
+    *   *Rôle* : Skill purement passif qui contient la documentation de Tailwind v3. C'est le dictionnaire que consulte le `createur-ui`.
+
+*L'agent orchestre ces 5 talents pour produire le site.*
