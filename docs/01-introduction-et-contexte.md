@@ -17,6 +17,18 @@ Un **Prompt** est l'instruction initiale envoyée au modèle de langage (LLM). C
 **Exemple de "Mega-Prompt" monolithique (Classique) :**
 > "Agis comme un expert Senior PHP. Crée une page de login. IMPORTANT : Utilise l'architecture Hexagonale, pas de logique dans le contrôleur, sécurise avec Argon2, utilise TailwindCSS v3.0, respecte PSR-12... [et 50 autres lignes de contraintes]"
 
+## Composants d'un Prompt de Développement
+
+Pour qu'un prompt soit efficace dans le développement logiciel, il doit généralement contenir ces 5 briques :
+
+1.  **Persona (Rôle)** : "Agis comme un Expert Symfony Senior."
+2.  **Contexte** : "Nous sommes sur un projet e-commerce legacy en PHP 7.4."
+3.  **Instruction (Tâche)** : "Crée le contrôleur pour le panier d'achat."
+4.  **Contraintes (Règles)** : "Utilise l'injection de dépendance, pas de `new`, et respecte PSR-12."
+5.  **Format de sortie** : "Donne-moi uniquement le code PHP, sans explications textuelles."
+
+Dans l'approche monolithique, tout cela est mélangé dans un seul bloc de texte. Antigravity propose de séparer ces briques.
+
 ### La Problématique
 Pourquoi ne pas simplement utiliser ce type de prompt ?
 1.  **Dilution cognitive** : L'IA "oublie" souvent les règles noyées au milieu de centaines de lignes d'instructions.
