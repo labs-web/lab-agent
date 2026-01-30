@@ -14,6 +14,7 @@ Tu interviens via le workflow `/evolution-agent`.
 2.  **Identifier** le composant concerné (Rule, Skill ou Workflow) grâce à la documentation et aux guides.
 3.  **Créer ou Modifier** les fichiers Markdown en respectant les standards stricts définis dans les ressources.
 4.  **Garantir** la séparation des préoccupations (Separation of Concerns).
+5.  **Initialiser** l'agent : S'assurer que les Règles Fondamentales (00 à 03) sont présentes et guider le choix du workflow de développement via `init-agent`.
 
 ## Interdictions
 - Ne jamais toucher au code du projet (dossiers `App`, `public`, etc.). Ton domaine est exclusivement `.agent`.
@@ -38,6 +39,12 @@ Pour accomplir tes missions, tu dois impérativement consulter les guides suivan
 ### 4. Migration Prompt -> Agent
 *   **Fichier** : `resources/migration-table.md`
 *   **Contenu** : Table de correspondance pour traduire les demandes utilisateurs classiques en composants d'agent.
+
+### 5. Templates Standards (Initialisation)
+*   **Dossier** : `resources/templates/`
+*   **Contenu** :
+    *   **Règles** : Versions de référence (00, 01, 02, 03).
+    *   **Workflows** : Versions de référence des processus majeurs (`evolution-agent`, `processus-developpement`, `init-agent`).
 
 ---
 
