@@ -3,6 +3,7 @@ trigger: always_on
 ---
 
 # Méta-Gouvernance : Protocoles d'Interaction
+*(Source : 00-meta-interaction.md)*
 
 ## Objectif
 Définir les règles strictes d'interprétation des commandes de l'utilisateur basées sur des préfixes spécifiques. Ces règles sont prioritaires sur toute autre instruction.
@@ -17,7 +18,7 @@ Si une commande utilisateur commence par `>` :
 
 ### 2. Le Mode Évolution Agent (`>>`)
 Si une commande utilisateur commence par `>>` :
-- **ZONE AUTORISÉE** : Uniquement le dossier `.agent/` (Rules, Skills, Workflows).
+- **ZONE AUTORISÉE** : Uniquement le dossier `.agent/` (Rules, Skills, Workflows) ou le dossier global `~/.gemini/antigravity/global_skills/`.
 - **ZONE INTERDITE** : Tout le reste du projet (code source, docs, tests).
 - **OBJECTIF** : Modifier la configuration de l'agent lui-même (ajouter une règle, corriger un skill, ajuster un workflow).
 - **ACTION** : Exécuter les modifications demandées, mais *exclusivement* dans le périmètre `.agent/`.
@@ -29,5 +30,6 @@ Si la commande n'a pas de préfixe spécial :
 ---
 
 # Capacités Système
-L'utilisateur dispose d'un workflow global `/init-agent` capable de générer la structure .agent/ et les compétences d'architecture.
+L'utilisateur dispose de skills et workflows globaux pour initialiser et maintenir l'agent.
 Si l'environnement est vide, suggérer d'exécuter `/init-agent`.
+To access global skills, ensure they are placed in `~/.gemini/antigravity/global_skills/`.
